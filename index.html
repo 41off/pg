@@ -1053,7 +1053,7 @@ ul{list-style-type: disc; color:red
             <right>
                <button class="playlistbutton" onclick="on0()"><li>Latest</li></button>
                <button class="playlistbutton" onclick="on1()"><li>Clip 2</li></button>
-               <button class="playlistbutton" onclick="on2()"><li>Clip 3</li></button>
+               <button class="playlistbutton" onclick="on2()"><li>10-17-2020</li></button>
                <button class="playlistbutton" onclick="on3()"><li>Clip 4</li></button>
                <button class="playlistbutton" onclick="on4()"><li>Clip 5</li></button>
                <button class="playlistbutton" onclick="on5()"><li>Clip 6</li></button>
@@ -1409,7 +1409,8 @@ a){var b=F.exec(a);b&&(b[1]=(b[1]||"").toLowerCase(),b[3]=b[3]&&new RegExp("(?:^
    }
           
         var video_directory = ['https://player.vimeo.com/external/468376204.hd.mp4?s=ae32c4912bfba41349aecd4d9e38974dce7b64fe&profile_id=175',
-                               'https://player.vimeo.com/external/384270451.hd.mp4?s=d712635e1dcc47fd9d2bff9f7eb62553499b8f83&profile_id=175'
+                               'https://player.vimeo.com/external/384270451.hd.mp4?s=d712635e1dcc47fd9d2bff9f7eb62553499b8f83&profile_id=175',
+                               'https://player.vimeo.com/external/470756931.hd.mp4?s=e1898c446656131819fe8170eafc50d3e6b247bb&profile_id=175'
                               ];                             
  
   
@@ -1638,16 +1639,16 @@ $("#negative3").click(function() { // button function for rewind
             
           var btn = document.getElementById("modal");
       
-            if (btn.value == "Clip 3") {
+            if (btn.value == "10-17-2020") {
               btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 3</button>';
+              btn.innerHTML = '<button id="modtext">10-17-2020</button>';
               timer.reset();
               video_player.play();
               timer.start(10);
               timer.mode(1);
               }
             else {
-              btn.value = "Clip 3";
+              btn.value = "10-17-2020";
               btn.innerHTML = '<button id="modtext">Start&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8690</button>';
               timer.stop();
               video_player.pause();
