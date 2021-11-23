@@ -89,7 +89,7 @@ body {
     display: block;
     min-width: 150px;
     right:15px;    
-    top: 150px;
+    top: 75px;
 }
 .timer:hover {
     border:3px red solid;
@@ -453,7 +453,7 @@ body {
     color: white;
     opacity: .15;
     transition: opacity 10s;
-    bottom: 150px;
+    bottom: 100px;
    
 -webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 15s; /* Firefox < 16 */
@@ -498,7 +498,6 @@ body {
     opacity: .15;
     transition: opacity 10s;
     bottom: 150px;
-   
 
 -webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 15s; /* Firefox < 16 */
@@ -606,7 +605,7 @@ body {
     padding-left: 2px;
     padding-bottom: 2px;    
     min-width: 150px;
-    bottom:590px;
+    bottom:650px;
 }
 
 #modtext:hover {
@@ -1001,15 +1000,27 @@ ul{list-style-type: disc; color:red
     left:  10%;
     right: 10%;
     bottom:12%;
-    background-color:transparent
+    background-color:transparent;
+    overflow:hidden
 }
+
+#video-canvas {
+    top:0%;
+    left:  0%;
+    right: 20%;
+    bottom:0%;
+    background-color:transparent;
+    overflow:hidden
+}
+
 
 #video-canvas1 {
     top:0%;
     left:  0%;
-    right: 10%;
+    right: 20%;
     bottom:0%;
-    background-color:transparent
+    background-color:transparent;
+    overflow:hidden
 }
 
 .toolblock {
@@ -1031,7 +1042,19 @@ ul{list-style-type: disc; color:red
     color: white;
     opacity: .15;
     transition: opacity 10s;
-    bottom: 500px;
+    bottom: 400px;
+    
+-webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 15s; /* Firefox < 16 */
+        -ms-animation: fadeout 15s; /* Internet Explorer */
+         -o-animation: fadeout 15s; /* Opera < 12.1 */
+            animation: fadeout 15s;  
+  
+-webkit-animation: fadein 15s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 15s; /* Firefox < 16 */
+        -ms-animation: fadein 15s; /* Internet Explorer */
+         -o-animation: fadein 15s; /* Opera < 12.1 */
+            animation: fadein 15s;
 }
 
 .toolblock:hover {
