@@ -1,0 +1,28 @@
+﻿<html lang="en" >
+<head>
+  <title>Canvas Drawing Tool</title>
+<style>
+</style>
+<link href="color.css" rel="stylesheet" type="text/css">
+</head>
+<body translate="no" >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+ 
+<body>
+  <div id="colorButtonBox">
+    <div id="colorButton" class="black" onclick='changeColorAndSize("black",10)'></div>
+    <div id="colorButton" class="red" onclick="changeColorAndSize('red',10)"></div>
+    <div id="colorButton" class="green" onclick="changeColorAndSize('green',10)"></div>
+    <div id="colorButton" class="blue" onclick="changeColorAndSize('blue',10)"></div>
+    <div id="colorButton" class="yellow" onclick="changeColorAndSize('yellow',10)"></div>
+    <div id="eraserButton" onclick="changeColorAndSize('white',100)"></div>
+  </div>
+  <canvas id="video-canvas1"></canvas>
+</body>
+      <script id="rendered-js" src="colordraw.js" >
+    </script>
+</body>
+</html>

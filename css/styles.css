@@ -582,6 +582,33 @@ body {
   visibility: visible;
 }
 
+#addtextbutton {
+    display:inline-block;
+    text-align: left;
+    background-color: transparent;
+    font-size: 20px;
+    margin: 0px 0px;
+    margin-bottom:4px;
+    padding-top:0px;
+    padding-bottom:4px;
+    padding-left:0px;
+    width: 80px; 
+    height: 25px;
+    cursor: pointer;
+    color:white;
+    border-style:dotted;
+    border-width: 0px;
+    border-color:transparent;
+    border-radius: 6px
+}
+
+#addtextbutton:hover {
+    color:blue;
+    text-decoration:underline;
+    background-color: silver; 
+}
+
+
 #modal {
     visibility: hidden;
    
@@ -1054,19 +1081,21 @@ ul{list-style-type: disc; color:red
     text-align:left;
     display:block;
     left: 15px;
-    padding-top: 0px;
-    padding-bottom:3px;
+    padding-top: 2px;
+    padding-bottom:2px;
     padding-left: 10px;
     padding-right: 0px;
+    margin-bottom:2px;
     background-color: transparent;
     border: 3px;
     border-color: lime;
     border-radius: 12px;
     border-style: double;
-    height:200px;
+    height:220px;
     width: 100px;
     font-family: "Arial Narrow", Arial, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
+    line-height:22px;
     color: white;
     opacity: .15;
     transition: opacity 10s;

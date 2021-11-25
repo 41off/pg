@@ -5,27 +5,33 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta  name="viewport" content="width=device-width, initial-scale=1"/>
 
  <link rel='icon' href='favicon.ico' type='image/x-icon'/ > 
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
  <link href="plugins/videojs/css/video-js.css" rel="stylesheet" type="text/css">
  <link href="css/styles.css" rel="stylesheet" type="text/css">
+ <link href="color.css" rel="stylesheet" type="text/css">
 
 
 </head>
 
-<body>
+<body translate="no">
 
 
 <style type="text/css" media="screen">
 
 </style>           
 
-
 <body onload="onload();">
 
-   <div id="stage">
+<!-- text box -->
+
+<div  class="row">
+
+    <canvas id="canvas1"></canvas>
+</div>
+				
+    <div id="stage">
   
              <video id="video" controls muted loop
                      onclick="this.paused? ClickPause():ClickStart(); this.paused? timer.start(10):timer.stop(0)" onended="onVideoEnded();">
@@ -99,6 +105,8 @@
 							<div class="toolblock">
 							 <span class="closebtn2">&#11097;</span>
 								Drawing Tools
+								<button id="addtextbutton" onclick="Addtext()">Add Text</button>
+
 								 <div class="inner_tool">
 									<button class="line-drawing-tools" data-value="circle">
 										<i class="toolicon1"></i>
@@ -112,10 +120,8 @@
 									<button class="line-drawing-tools" data-value="move">
 										<i class="toolicon4"></i>
 									</button>
-								<br>							
-							  	<a href="javascript:void(0)" class="line-drawing-tools" data-value="delete">&#128473;Selected
-								<br>
-								<a href="javascript:void(0)" class="line-drawing-tools" data-value="clear">&#128473; All</a>
+								<button id="addtextbutton"href="javascript:void(0)" class="line-drawing-tools" data-value="delete">&#128473;Select</button>								
+							    <button id="addtextbutton" href="javascript:void(0)" class="line-drawing-tools" data-value="clear">&#128473; All</button>
 							</div>
 						  </div>
 								
@@ -124,9 +130,13 @@
    
    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="plugins/textbox.js"></script>
   <script src="js/jquery-3.2.1.slim.min.js"></script>
+  <script src="js/jquery-2.1.4.js"></script>
   
-	
+   <!-- Text - Color Palette JS -->
+   <script src="plugins/textbox.js"></script>
+   <script id="rendered-js" src="colordraw.js"></script>
  <!-- Video JS -->
    <script src="plugins/fabric/fabric.min.js"></script>
    <script src="js/commanFunction.js"></script>
