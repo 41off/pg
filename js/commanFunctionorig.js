@@ -189,165 +189,6 @@ function changeDrawing() {
 }
 
 
-
-
-
-var startLine;
-var startLine1;
-function drawLine() {
-    canvas.on('mouse:down', function (o) {
-        if (isLineDrawing == "1") {
-            canvas.selection = false;
-            isDownAngle = true;
-            var pointer = canvas.getPointer(o.e);
-            var points = [pointer.x, pointer.y, pointer.x, pointer.y];
-
-            line = new fabric.Line(points, {
-                strokeWidth: 2,
-                fill: 'yellow',
-                stroke: 'yellow',
-                originX: 'center',
-                originY: 'center'
-            });
-            line.line1 = line;
-            canvas.add(line);
-        }
-    });
-
-    canvas.on('mouse:move', function (o) {
-        if (!isDownAngle)
-            return;
-        if (isLineDrawing == "1") {
-            var pointer = canvas.getPointer(o.e);
-            line.set({x2: pointer.x, y2: pointer.y});
-            canvas.renderAll();
-        }
-    });
-
-    canvas.on('mouse:up', function (o) {
-        if (isLineDrawing == "1") {
-            y11 = line.get('y1');
-            y12 = line.get('y2');
-            x11 = line.get('x1');
-            x12 = line.get('x2');
-            var dy = y12 - y11;
-            var dx = x12 - x11;
-            var theta = Math.hypot(dy, dx); // range (-PI, PI]
-            theta *= 180 / Math.PI;
-            line.startAngle = theta;
-            var angle = countAngle(theta);
-            var angl = parseInt(angle).toString() +'°';
-            var top = line.top
-            var left = line.left;
-            if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
-                left += 11;
-            }
-            if((theta >76 && theta < 90) || (theta >-166 && theta < -145)){
-                left += 08;
-            }
-            if((theta >0 && theta < 46) || (theta >-146 && theta < -90)){
-                left += 20;
-            }
-            var text1 = new fabric.Text(angl, {
-                fontSize: 20,
-                fontFamily: 'Verdana', top: top, left:left,
-                fill: 'lime'
-            });
-            line.lineText = text1;
-            canvas.add(text1);
-            isDownAngle = false;
-            rotateText(line);
-        }
-    });
-    canvas.on('object:rotating', function (e) {
-        if(typeof e.target.lineText != "undefined"){
-            var newAngle = getCurrentAngle(e);
-            var theta = countAngle(newAngle);
-            theta = parseInt(theta).toString() +'°';
-            e.target.lineText.setText(theta);
-            rotateText(e.target);
-        }
-    });
-
-    //draw angel in canvas 2
-
-    canvas1.on('mouse:down', function (o) {
-        if (isLineDrawing == "1") {
-            canvas1.selection = false;
-            isDownAngle = true;
-            var pointer = canvas1.getPointer(o.e);
-            var points = [pointer.x, pointer.y, pointer.x, pointer.y];
-
-            line2 = new fabric.Line(points, {
-                strokeWidth: 2,
-                fill: 'yellow',
-                stroke: 'yellow',
-                originX: 'center',
-                originY: 'center'
-            });
-            line2.line1 = line2;
-            canvas1.add(line2);
-        }
-    });
-
-    canvas1.on('mouse:move', function (o) {
-        if (!isDownAngle)
-            return;
-        if (isLineDrawing == "1") {
-            var pointer = canvas1.getPointer(o.e);
-            line2.set({x2: pointer.x, y2: pointer.y});
-            canvas1.renderAll();
-        }
-    });
-    canvas1.on('mouse:up', function (o) {
-
-        if (isLineDrawing == "1") {
-            y11 = line2.get('y1');
-            y12 = line2.get('y2');
-            x11 = line2.get('x1');
-            x12 = line2.get('x2');
-            var dy = y12 - y11;
-            var dx = x12 - x11;
-            var theta = Math.hypot(dy, dx); // range (-PI, PI]
-            theta *= 180 / Math.PI;
-            line2.startAngle = theta;
-            var angle = countAngle(theta);
-            var angl = parseInt(angle).toString() +' units';
-            var top = line2.top
-            var left = line2.left;
-            if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
-                left += 11;
-            }
-            if((theta >76 && theta < 90) || (theta >-166 && theta < -145)){
-                left += 08;
-            }
-            if((theta >0 && theta < 46) || (theta >-146 && theta < -90)){
-                left += 20;
-            }
-            var text2 = new fabric.Text(angl, {
-                fontSize: 20,
-                fontFamily: 'Verdana', top: top, left:left,
-                fill: 'lime'
-            });
-            line2.lineText = text2;
-            canvas1.add(text2);
-            isDownAngle = false;
-            rotateText(line2);
-        }
-    });
-    canvas1.on('object:rotating', function (e) {
-        if(typeof e.target.lineText != "undefined"){
-            var newAngle = getCurrentAngle(e);
-            var theta = countAngle(newAngle);
-            theta = parseInt(theta).toString() +' units';
-            e.target.lineText.setText(theta);
-            rotateText(e.target);
-        }
-    });
-}
-
-
-/*
 function drawLine() {
     canvas.on('mouse:down', function (o) {
         if (isLineDrawing == "1") {
@@ -415,7 +256,7 @@ function drawLine() {
         isDown = false;
     });
 }
-*/
+
     
 function drawCircle() {
     canvas.on('mouse:down', function (o) {
@@ -525,12 +366,82 @@ function drawCircle() {
     });
 
 }
+var startAngle;
+var startAngle1;
+function drawAngle() {
+    canvas.on('mouse:down', function (o) {
+        if (isAngleDrawing == "1") {
+            canvas.selection = false;
+            isDownAngle = true;
+            var pointer = canvas.getPointer(o.e);
+            var points = [pointer.x, pointer.y, pointer.x, pointer.y];
 
+            line = new fabric.Line(points, {
+                strokeWidth: 2,
+                fill: 'red',
+                stroke: 'red',
+                originX: 'center',
+                originY: 'center'
+            });
+            line.line1 = line;
+            canvas.add(line);
+        }
+    });
 
-var startAngle
-var startAngle1
- function drawAngle() {
-    
+    canvas.on('mouse:move', function (o) {
+        if (!isDownAngle)
+            return;
+        if (isAngleDrawing == "1") {
+            var pointer = canvas.getPointer(o.e);
+            line.set({x2: pointer.x, y2: pointer.y});
+            canvas.renderAll();
+        }
+    });
+
+    canvas.on('mouse:up', function (o) {
+        if (isAngleDrawing == "1") {
+            y11 = line.get('y1');
+            y12 = line.get('y2');
+            x11 = line.get('x1');
+            x12 = line.get('x2');
+            var dy = y12 - y11;
+            var dx = x12 - x11;
+            var theta = Math.atan2(dy, dx); // range (-PI, PI]
+            theta *= 180 / Math.PI;
+            line.startAngle = theta;
+            var angle = countAngle(theta);
+            var angl = parseInt(angle).toString() +'°';
+            var top = line.top
+            var left = line.left;
+            if((theta >45 && theta < 75) || (theta >-180 && theta < -165)){
+                left += 11;
+            }
+            if((theta >76 && theta < 90) || (theta >-166 && theta < -145)){
+                left += 08;
+            }
+            if((theta >0 && theta < 46) || (theta >-146 && theta < -90)){
+                left += 20;
+            }
+            var text1 = new fabric.Text(angl, {
+                fontSize: 25,
+                fontFamily: 'Georgia', top: top, left:left,
+                fill: 'red'
+            });
+            line.lineText = text1;
+            canvas.add(text1);
+            isDownAngle = false;
+            rotateText(line);
+        }
+    });
+    canvas.on('object:rotating', function (e) {
+        if(typeof e.target.lineText != "undefined"){
+            var newAngle = getCurrentAngle(e);
+            var theta = countAngle(newAngle);
+            theta = parseInt(theta).toString() +'°';
+            e.target.lineText.setText(theta);
+            rotateText(e.target);
+        }
+    });
 
     //draw angel in canvas 2
 
@@ -569,11 +480,8 @@ var startAngle1
             y12 = line2.get('y2');
             x11 = line2.get('x1');
             x12 = line2.get('x2');
-            
             var dy = y12 - y11;
             var dx = x12 - x11;
-            
-
             var theta = Math.atan2(dy, dx); // range (-PI, PI]
             theta *= 180 / Math.PI;
             line2.startAngle = theta;
@@ -591,9 +499,9 @@ var startAngle1
                 left += 20;
             }
             var text2 = new fabric.Text(angl, {
-                fontSize: 20,
-                fontFamily: 'Verdana', top: top, left:left,
-                fill: 'yellow'
+                fontSize: 25,
+                fontFamily: 'Georgia', top: top, left:left,
+                fill: 'red'
             });
             line2.lineText = text2;
             canvas1.add(text2);
@@ -611,7 +519,6 @@ var startAngle1
         }
     });
 }
-
 
 function createTriangle(left, top, line1, line2, line3, line4) {
     var c = new fabric.Triangle({
@@ -671,3 +578,292 @@ function deleteObjects() {
         });
     }
 }
+
+jQuery(document).ready(function($) {
+    
+var player = videojs("sidebyside-video_1").ready(function() {
+    var myPlayer = this, id = myPlayer.id();
+    //var aspectRatio = 1;
+    var aspectRatio = 300/640;
+
+
+    function resizeVideoJS(){
+        var controlsHeight = 30;
+        var width = document.getElementById(id).parentElement.offsetWidth;
+        var height = document.getElementById(id).parentElement.offsetHeight;
+        aspectRatio = height/width;
+        //myPlayer.width(width).height( width * aspectRatio );
+        $("#video-canvas").width(width).height( width * aspectRatio -controlsHeight);
+        $("#video-canvas").next(".upper-canvas").width(width).height( width * aspectRatio -controlsHeight);
+        $("#video-canvas").next(".canvas-container").width(width).height( width * aspectRatio - controlsHeight );
+
+    }
+    resizeVideoJS();
+    window.onresize = resizeVideoJS;
+});
+
+var otherPlayer = videojs("sidebyside-video_2").ready(function() {
+var myPlayer = this, id = myPlayer.id();
+var aspectRatio = 300/640;
+
+function resizeVideoJS(){
+    var controlsHeight = 30;
+    var width = document.getElementById(id).parentElement.offsetWidth;
+    var height = document.getElementById(id).parentElement.offsetHeight;
+    aspectRatio = height/width;
+//              alert("height : "+height+"width : "+width);
+//              alert(width/height)
+//              myPlayer.width(width).height( width * aspectRatio );
+    $("#video-canvas1").width(width).height( width * aspectRatio -controlsHeight);
+    $("#video-canvas1").next(".upper-canvas").width(width).height( width * aspectRatio -controlsHeight);
+    $("#video-canvas1").next(".canvas-container").width(width).height( width * aspectRatio - controlsHeight );
+    //myPlayer.width(width).height( width * aspectRatio );
+}
+resizeVideoJS();
+window.onresize = resizeVideoJS;
+});
+
+player.bigPlayButton.hide();
+otherPlayer.bigPlayButton.hide();
+
+var isVideo1Playing = 0;
+var isVideo2Playing = 0;
+
+$(".action-on-both").click(function(event) {
+var action = $(".action-on-both").data("action") || "play";
+
+if(action == "play") {
+    playVideo("both");
+    $(".action-on-both").data("action", "pause").text("Pause Both");
+}
+else {
+    pauseVideo("both");
+    $(".action-on-both").data("action", "play").text("Play Both");
+}
+});
+$(".playVideoLeftBtn").click(function(event) {
+var action = $(this).data("action") || "play";
+if(action == "play") {
+    playVideo("video1");
+}
+else {
+    pauseVideo("video1");
+}
+});
+$(".video1PlayImage").click(function(event) {
+playVideo("video1");
+});
+$(".playVideoRightBtn").click(function(event) {
+var action = $(this).data("action") || "play";
+if(action == "play") {
+    playVideo("video2");
+}
+else {
+    pauseVideo("video2");
+}
+});
+$(".video2PlayImage").click(function(event) {
+playVideo("video2");
+});
+
+player.on('play', function() {
+playVideo("video1");
+});
+
+
+otherPlayer.on('play', function() {
+playVideo("video2");
+});
+
+player.on('pause', function() {
+pauseVideo("video1");
+});
+otherPlayer.on('pause', function() {
+pauseVideo("video2");
+});
+
+function playVideo(videosForPlay) {
+if(videosForPlay == "video1") {
+    isVideo1Playing = 1;
+    $(".play-both").removeClass('hide');
+    $(".pause-both").addClass('hide');
+    $(".video1PlayImage").addClass('hide');
+    player.play();
+    $(".playVideoLeftBtn").data("action", "pause").text("Pause Left")
+}
+else if(videosForPlay == "video2") {
+    isVideo2Playing = 1;
+    $(".play-both").removeClass('hide');
+    $(".pause-both").addClass('hide');
+    $(".video2PlayImage").addClass('hide');
+    otherPlayer.play();
+    $(".playVideoRightBtn").data("action", "pause").text("Pause Right")
+}
+else {
+    isVideo1Playing = 1;
+    isVideo2Playing = 1;
+
+    $(".pause-both").removeClass('hide');
+    $(".play-both").addClass('hide');
+    $(".video1PlayImage").addClass('hide');
+    $(".video2PlayImage").addClass('hide');
+    player.play();
+    otherPlayer.play();
+    $(".playVideoLeftBtn").data("action", "pause").text("Pause Left")
+    $(".playVideoRightBtn").data("action", "pause").text("Pause Right")
+}
+
+changeVideosActionButton()
+}
+
+function pauseVideo(videosForPause) {
+if(videosForPause == "video1") {
+    isVideo1Playing = 0;
+    $(".play-both").removeClass('hide');
+    $(".pause-both").addClass('hide');
+    $(".video1PlayImage").removeClass('hide');
+    player.pause();
+    $(".playVideoLeftBtn").data("action", "play").text("Play Left");
+}
+else if(videosForPause == "video2") {
+    isVideo2Playing = 0;
+    $(".play-both").removeClass('hide');
+    $(".pause-both").addClass('hide');
+    $(".video2PlayImage").removeClass('hide');
+    otherPlayer.pause();
+    $(".playVideoRightBtn").data("action", "play").text("Play Right");
+}
+else {
+    isVideo1Playing = 0;
+    isVideo2Playing = 0;
+    $(".pause-both").addClass('hide');
+    $(".play-both").removeClass('hide');
+    $(".video1PlayImage").removeClass('hide');
+    $(".video2PlayImage").removeClass('hide');
+    player.pause();
+    otherPlayer.pause();
+    $(".playVideoLeftBtn").data("action", "play").text("Play Left");
+    $(".playVideoRightBtn").data("action", "play").text("Play Right");
+}
+
+changeVideosActionButton();
+}
+
+function changeVideosActionButton() {
+if(isVideo1Playing == 1 && isVideo2Playing == 1) {
+    $(".action-on-both").data("action", "pause").text("Pause Both");
+}
+else {
+    $(".action-on-both").data("action", "play").text("Play Both");
+}
+}
+
+//Time for forward or Backword video
+var changeDurationTime = 5; //Forword or Backword times for Video
+
+$(document).on('click', '.both-forward', function(event) {
+    event.preventDefault();
+    forwordVideo(player);
+    forwordVideo(otherPlayer);
+});
+$(document).on('click', '.left-video-forward', function(event) {
+    event.preventDefault();
+    forwordVideo(player);
+});
+$(document).on('click', '.right-video-forward', function(event) {
+    event.preventDefault();
+    forwordVideo(otherPlayer);
+});
+function forwordVideo(playerName) {
+    var video1TotalTime = playerName.duration();
+    var video1CurrentTime = playerName.currentTime();
+    var newDurationVideoTime = video1CurrentTime+changeDurationTime;
+    if(video1TotalTime > video1CurrentTime && video1TotalTime > newDurationVideoTime) {
+        playerName.currentTime(newDurationVideoTime);
+    }
+    else {
+        playerName.currentTime(video1TotalTime);
+    }
+}
+
+$(document).on('click', '.both-backward', function(event) {
+    event.preventDefault();
+    backwordVideo(player);
+    backwordVideo(otherPlayer);
+});
+$(document).on('click', '.left-video-backward', function(event) {
+    event.preventDefault();
+    backwordVideo(player);
+});
+$(document).on('click', '.right-video-backward', function(event) {
+    event.preventDefault();
+    backwordVideo(otherPlayer);
+});
+function backwordVideo(playerName) {
+    var video1TotalTime = playerName.duration();
+    var video1CurrentTime = playerName.currentTime();
+    var newDurationVideoTime = video1CurrentTime-changeDurationTime;
+    if(video1TotalTime > 0 && newDurationVideoTime > 0) {
+        playerName.currentTime(newDurationVideoTime);
+    }
+    else {
+        playerName.currentTime(0);
+    }
+}
+var video1ZoomingLevel = 1;
+var video2ZoomingLevel = 1;
+var configZoomingValue = 0.5;
+//Zoom in - out
+$(".left-video-zoom-in").click(function(event) {
+    video1ZoomingLevel = video1ZoomingLevel + configZoomingValue;
+    videoZoomInOut(player, video1ZoomingLevel);
+});
+$(".left-video-zoom-out").click(function(event) {
+    if(video1ZoomingLevel > 1) {
+        video1ZoomingLevel = video1ZoomingLevel - configZoomingValue;
+        videoZoomInOut(player, video1ZoomingLevel);
+    }
+});
+$(".right-video-zoom-in").click(function(event) {
+    video2ZoomingLevel = video2ZoomingLevel + configZoomingValue;
+    videoZoomInOut(otherPlayer, video2ZoomingLevel);
+});
+$(".right-video-zoom-out").click(function(event) {
+    if(video2ZoomingLevel > 1) {
+        video2ZoomingLevel = video2ZoomingLevel - configZoomingValue;
+        videoZoomInOut(otherPlayer, video2ZoomingLevel);
+    }
+});
+
+function videoZoomInOut(playerName, zoomValue) {
+    playerName.zoomrotate({
+            zoom: zoomValue
+    });
+}
+
+$(document).on('click', '.btn-slow-motion', function(event) {
+    event.preventDefault();
+    var motion = $(this).data("motion") || 1;
+    if(motion == 2) {
+        configVideoPlaybackRates = 0.5
+    }
+    else if (motion == 4) {
+        configVideoPlaybackRates = 0.25
+    }
+    else if (motion == 8) {
+        configVideoPlaybackRates = 0.125
+    }
+    else {
+        configVideoPlaybackRates = 1
+    }
+
+    var currentplayer = $(this).data('playername');
+    if ( currentplayer == "player" ){
+        player.playbackRate(configVideoPlaybackRates);
+    }else {
+        otherPlayer.playbackRate(configVideoPlaybackRates);
+    }
+    $('.btn-slow-motion').removeClass('active');
+    $(this).addClass("active");
+});
+});

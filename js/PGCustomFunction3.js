@@ -613,6 +613,139 @@ var startAngle1
 }
 
 
+
+
+
+"use strict";
+
+  var width = 960,
+      height = 500;
+
+  var svg = d3.select("svg")
+      .attr("width", width)
+      .attr("height", height)
+    .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+  var drag = d3.drag()
+      .on("drag", function(d) { d.x = d3.event.x; d.y = d3.event.y; update(); });
+
+  var arc = d3.arc()
+      .cornerRadius(4);
+
+  var format = d3.format(".2f")
+
+  // Origin
+  svg.append("line")
+      .attr("y1", -height / 2)
+      .attr("y2", height / 2);
+
+  svg.append("line")
+      .attr("x1", -width / 2)
+      .attr("x2", width / 2)
+
+  svg.append("circle")
+      .attr("r", 4);
+
+  // Difference
+  var differenceArc = svg.append("g")
+      .datum({});
+
+  var differencePath = differenceArc.append("path")
+      .attr("class", "difference");
+
+  var differenceText = differenceArc.append("text");
+
+  // Source vector
+  var sourceVector = svg.append("g")
+      .attr("class", "source")
+      .datum({x: 0, y: -150});
+
+  var sourceHandle = sourceVector.append("g")
+      .attr("class", "handle")
+      .call(drag);
+
+  var sourceLine = sourceVector.append("line")
+      .attr("marker-end", "url(#arrowhead)");
+
+  sourceHandle.append("circle")
+      .attr("r", 10);
+
+  var sourceText = sourceHandle.append("text")
+      .attr("dy", -15);
+
+  // Compare vector
+  var compareVector = svg.append("g")
+      .attr("class", "compare")
+      .datum({x: -250, y: -75});
+
+  var compareHandle = compareVector.append("g")
+      .attr("class", "handle")
+      .call(drag);
+
+  var compareLine = compareVector.append("line")
+      .attr("marker-end", "url(#arrowhead)");
+
+  compareHandle.append("circle")
+      .attr("r", 10);
+
+  var compareText = compareHandle.append("text")
+      .attr("dy", -15);
+
+  // Update
+  function update() {
+    var source = sourceVector.datum(),
+        compare = compareVector.datum();
+
+    var sourceLength = Math.sqrt(source.x * source.x + source.y * source.y),
+        compareLength = Math.sqrt(compare.x * compare.x + compare.y * compare.y);
+
+    // The math-y bits
+    var a2 = Math.atan2(source.y, source.x);
+    var a1 = Math.atan2(compare.y, compare.x);
+    var sign = a1 > a2 ? 1 : -1;
+    var angle = a1 - a2;
+    var K = -sign * Math.PI * 2;
+    var angle = (Math.abs(K + angle) < Math.abs(angle))? K + angle : angle;
+
+    sourceLine
+        .attr("x2", (d) => d.x)
+        .attr("y2", (d) => d.y);
+
+    sourceHandle
+        .attr("transform", (d) => `translate(${d.x}, ${d.y})`);
+
+    sourceText
+        .text(`${source.x}, ${source.y}`)
+
+    compareLine
+        .attr("x2", (d) => d.x)
+        .attr("y2", (d) => d.y);
+
+    compareHandle
+        .attr("transform", (d) => `translate(${d.x}, ${d.y})`)
+
+    compareText
+        .text(`${compare.x}, ${compare.y}`);
+
+    arc
+        .innerRadius(20)
+        .outerRadius(Math.max(30, Math.min(sourceLength, compareLength) * 0.9))
+        .startAngle(a2 + Math.PI / 2)
+        .endAngle(a2 + angle + Math.PI / 2);
+
+    differencePath
+        .style("fill", angle > 0 ? "cyan" : "magenta")
+        .attr("d", arc());
+
+    differenceText
+        .attr("transform", "translate(" + arc.centroid() + ")")
+        .text(Math.abs(Math.round(360 * angle / (Math.PI * 2))) + "º " + (angle > 0 ? "starboard" : "port"))
+  }
+  update();
+
+
+
 function createTriangle(left, top, line1, line2, line3, line4) {
     var c = new fabric.Triangle({
         left: left,

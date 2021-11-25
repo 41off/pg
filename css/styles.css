@@ -89,7 +89,7 @@ body {
     display: block;
     min-width: 150px;
     right:15px;    
-    top: 60px;
+    top: 65px;
 }
 .timer:hover {
     border:3px red solid;
@@ -1052,7 +1052,7 @@ ul{list-style-type: disc; color:red
 .toolblock {
     position:absolute;
     text-align:left;
-    display:inline-block;
+    display:block;
     left: 15px;
     padding-top: 0px;
     padding-bottom:3px;
