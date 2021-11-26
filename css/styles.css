@@ -104,7 +104,7 @@ body {
     right:15px;
     top: 2%;
     height: 40px;
-    width:1200px;
+    width:1150px;
     opacity: .25;
     transition: opacity 30s;
     background-color: transparent;
@@ -112,6 +112,7 @@ body {
     border-color: lime;
     border-radius: 8px;
     border-style: double;
+    overflow:hidden;
     -webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 15s; /* Firefox < 16 */
         -ms-animation: fadeout 15s; /* Internet Explorer */
@@ -300,7 +301,7 @@ body {
     background-color: transparent;
     font-weight: normal;
     color: white; 
-    width: 70px;
+    width: 75px;
     margin: 2px 2px;
     border-color: transparent;
     border-radius: 10px;
@@ -480,8 +481,7 @@ body {
 }
 
 .playlist {
-    
-    display;display:inline;
+    display:inline;
     position:absolute;
     right: 15px;
     padding-top: 0px;
@@ -1047,7 +1047,7 @@ ul{list-style-type: disc; color:red
  li a:visited {color:green; font-family: "Arial Narrow";
             background:transparent; text-decoration:underline;}
 
-.row {
+.paperscript {
     position: absolute !important;
     top:10%;
     left:  10%;
@@ -1066,7 +1066,6 @@ ul{list-style-type: disc; color:red
     overflow:hidden
 }
 
-
 #video-canvas1 {
     top:0%;
     left:  0%;
@@ -1076,6 +1075,26 @@ ul{list-style-type: disc; color:red
     overflow:hidden
 }
 
+
+#colorcnv1 {
+    top:0%;
+    left:  0%;
+    right: 20%;
+    bottom:0%;
+    background-color:transparent;
+    overflow:hidden
+}
+
+#arrowcnv {
+    top:0%;
+    left:  0%;
+    right: 20%;
+    bottom:0%;
+    background-color:transparent;
+    overflow:hidden
+}
+
+
 .toolblock {
     position:absolute;
     text-align:left;
@@ -1083,7 +1102,7 @@ ul{list-style-type: disc; color:red
     left: 15px;
     padding-top: 2px;
     padding-bottom:2px;
-    padding-left: 10px;
+    padding-left: 7px;
     padding-right: 0px;
     margin-bottom:2px;
     background-color: transparent;
@@ -1091,14 +1110,14 @@ ul{list-style-type: disc; color:red
     border-color: lime;
     border-radius: 12px;
     border-style: double;
-    height:220px;
+    height:380px;
     width: 100px;
     font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 20px;
     line-height:22px;
     color: white;
     opacity: .15;
-    transition: opacity 10s;
+    transition: opacity 5s;
     bottom: 400px;
     
 -webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
@@ -1136,14 +1155,12 @@ ul{list-style-type: disc; color:red
     width: 36px;
     height: 36px;
     line-height: 34px;
-    background: #fff;
-    border: 1px solid #cccccc;
-        border-right-color: rgb(204, 204, 204);
-        border-right-style: solid;
-        border-right-width: 1px;
-    border-right: none;
+    background: pink;
+    border: 1px solid red;
+    border-radius: 4px;
     float: left;
     padding: 0px;
+    margin:2px 2px
 }
 .toolblock .inner_tool button:last-child {
      border-right: 1px solid #cccccc;
@@ -1151,21 +1168,50 @@ ul{list-style-type: disc; color:red
 .toolblock .inner_tool button.active {
     background: #E9E9E9;
 }
+.toolblock .inner_tool button .toolicon1 {
+    background-position: -142px 0;
+}
 .toolblock .inner_tool button .toolicon2 {
-    background-position: -18px 0;
+    background-position: -160px 0;
 }
 .toolblock .inner_tool button .toolicon3 {
-    background-position: -36px 0;
+    background-position: -178px 0;
 }
 .toolblock .inner_tool button .toolicon4 {
-    background-position: -54px 0;
+    background-position: -196.5px 0;
 }
+.toolblock .inner_tool button .toolicon5 {
+    background-position: -102px 0;
+}
+.toolblock .inner_tool button .toolicon6 {
+    background-position: -122px 0;
+}
+.toolblock .inner_tool button .toolicon7 {
+    background-position: -81px 0;
+}
+.toolblock .inner_tool button .toolicon8 {
+    background-position: -60px 0;
+}
+.toolblock .inner_tool button .toolicon9 {
+    background-position: -20px 0;
+}
+.toolblock .inner_tool button .toolicon10 {
+    background-position: -40px 0;
+}
+.toolblock .inner_tool button .toolicon11 {
+    background-position: -0px 0;
+}
+.toolblock .inner_tool button .toolicon12 {
+    background-position: -216px 0;
+}
+
 .toolblock .inner_tool button i {
     background: url('../images/toolimg2.png') no-repeat;
     width: 18px;
     height: 18px;
     display:block;
-    margin: 0 auto;
+    margin: 2px auto;
+    border:thin;border-color:black
 }
             
 </style>

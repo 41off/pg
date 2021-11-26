@@ -1,28 +1,37 @@
-﻿<html lang="en" >
-<head>
-  <title>Canvas Drawing Tool</title>
-<style>
-</style>
-<link href="color.css" rel="stylesheet" type="text/css">
-</head>
-<body translate="no" >
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+﻿<html>
   
- 
-<body>
+<link href="css/color.css" rel="stylesheet" type="text/css">
+<link href="css/arrow.css" rel="stylesheet" type="text/css">
+   
+<div class="arrowbox">
+ <div class="closebtn2" style="text-align:right">&#11097;</div>
+  <button id="btn_drawar">Draw Arrow</button> 
+    <br><br>
+   <button id="btn_delar">Delete &#8594;</button>
+</div>
+<canvas id="video-canvas1"></canvas>
+
   <div id="colorButtonBox">
-    <div id="colorButton" class="black" onclick='changeColorAndSize("black",10)'></div>
+   <span class="closebtn2">&#11097;</span>
+   <br>
+    <div id="colorButton" class="black" onclick='changeColorAndSize("black",6)'></div>
     <div id="colorButton" class="red" onclick="changeColorAndSize('red',10)"></div>
     <div id="colorButton" class="green" onclick="changeColorAndSize('green',10)"></div>
     <div id="colorButton" class="blue" onclick="changeColorAndSize('blue',10)"></div>
-    <div id="colorButton" class="yellow" onclick="changeColorAndSize('yellow',10)"></div>
+    <div id="colorButton" class="yellow" onclick="changeColorAndSize('yellow',6)"></div>
     <div id="eraserButton" onclick="changeColorAndSize('white',100)"></div>
-  </div>
+    <div id="eraserButton" onclick="clearcnv()"></div>
+    <button id="clear-canvas">&#128473;Clear</button>
+   
+
+   </div>
+  
   <canvas id="video-canvas1"></canvas>
-</body>
-      <script id="rendered-js" src="colordraw.js" >
-    </script>
-</body>
+  
+  <script src="plugins/colordraw.js" ></script>
+  <script src="plugins/arrowplot.js" ></script>
+
+      
+
 </html>
+
