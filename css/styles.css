@@ -216,7 +216,7 @@ body {
   z-index: 1;
 }
 
-.timerbutton1:hover .tb1text {
+.timerbutton1:hover .tb1text, .timerbutton1:focus .tb1text, .timerbutton1:focus-within .tb1text {
   visibility: visible;
 }
 
@@ -271,29 +271,32 @@ body {
 
 .timerbutton .tbtext {
   visibility: hidden;
-  width: 180px;
-  height: 80px;
+  width: 100px;
+  height:200px;
   background-color: black;
   border-color: silver;
   color: white;
   text-decoration:blink;
-  font-weight:normal;
+  font-size:16px;
+  font-weight:bold;
   text-align: center;
-  margin-left:5px;
+  padding-left: 5px;
+  margin-left: 0px;
   display: inline-flex;
   align-items: center;
   border-width:2px;
   border-style:inset;
   border-radius: 6px;
-  line-height: 125%;
-  left: 40%;
-  top: 110%;
+  line-height: 20px;
+  left: 0px;
+  top: 0%;
   /* Position the tooltip */
   position: absolute;
-  z-index: 1;
+  overflow:visible
+  
 }
 
-.timerbutton:hover .tbtext {
+.timerbutton:hover .tbtext, .timerbutton:focus .tbtext, .timerbutton:focus-within .tbtext {
   visibility: visible;
 }
 
@@ -399,7 +402,7 @@ body {
     border-radius: 10px;
     border-style:double;
     width: 46x;
-    Margin: auto;
+    Margin: 3px 3px;
 }
 
 .timerbutton6:hover {
@@ -440,24 +443,25 @@ body {
 
 .controls{
     position:absolute;
+    display:block;
     text-align:center;
     left: 15px;
     padding-top: 0px;
-    padding-bottom:3px;
+    padding-bottom:0px;
     padding-left: 2px;
     background-color: transparent;
     border: 3px;
     border-color: lime;
     border-radius: 12px;
     border-style: double;
-    height:290px;
+    height:250px;
     width: 100px;
     font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 18px;
     color: white;
     opacity: .15;
     transition: opacity 10s;
-    bottom: 100px;
+    bottom: 75px;
    
 -webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 15s; /* Firefox < 16 */
@@ -555,11 +559,12 @@ body {
 
 .playlistbutton .plbtext {
   visibility: hidden;
-  width: 150px;
-  height:50px;
+  width: 175px;
+  height:70px;
   background-color: black;
   border-color: silver;
   color: white;
+  font-size:16px;
   text-decoration:blink;
   font-weight:bold;
   text-align: center;
@@ -570,9 +575,9 @@ body {
   border-width:2px;
   border-style:inset;
   border-radius: 6px;
-  line-height: 125%;
-  right: 20%;
-  top: 101%;
+  line-height: 20px;
+  right: 15%;
+  bottom: 0%;
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
@@ -581,6 +586,7 @@ body {
 .playlistbutton:hover .plbtext, .playlistbutton:focus .plbtext, .playlistbutton:focus-within .plbtext {
   visibility: visible;
 }
+
 
 #addtextbutton {
     display:inline-block;
@@ -1094,6 +1100,22 @@ ul{list-style-type: disc; color:red
     overflow:hidden
 }
 
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+}
+
+#mydivfooter {
+  padding: 10px;
+  cursor: move;
+  z-index: 0;
+  background-color: #2196F3;
+  color: red;
+}
+
 
 .toolblock {
     position:absolute;
@@ -1102,7 +1124,7 @@ ul{list-style-type: disc; color:red
     left: 15px;
     padding-top: 2px;
     padding-bottom:2px;
-    padding-left: 7px;
+    padding-left: 10px;
     padding-right: 0px;
     margin-bottom:2px;
     background-color: transparent;
@@ -1111,14 +1133,14 @@ ul{list-style-type: disc; color:red
     border-radius: 12px;
     border-style: double;
     height:380px;
-    width: 100px;
+    width: 92px;
     font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 20px;
     line-height:22px;
     color: white;
     opacity: .15;
     transition: opacity 5s;
-    bottom: 400px;
+    bottom: 335px;
     
 -webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 15s; /* Firefox < 16 */
@@ -1140,6 +1162,15 @@ ul{list-style-type: disc; color:red
  color: red;
  transition: opacity 2s;
 }
+
+.toolblockfooter {
+  padding: 10px;
+  cursor: move;
+  z-index: 0;
+  background-color: #2196F3;
+  color: red;
+}
+
 
 .toolbox:focus {
   color: red;

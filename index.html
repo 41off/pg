@@ -10,20 +10,17 @@
   <meta name="msapplication-tap-highlight" content="no"/>
 
 
- <link rel='icon' href='../Uploads_Members/favicon.ico' type='image/x-icon'/ > 
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- <link href="../Uploads_Members/plugins/videojs/css/video-js.css" rel="stylesheet" type="text/css">
- <link href="../Uploads_Members/css/styles.css" rel="stylesheet" type="text/css">
- <link href="../Uploads_Members/css/color.css" rel="stylesheet" type="text/css">
- <link href="../Uploads_Members/css/arrow.css" rel="stylesheet" type="text/css">
+ <link rel='icon' href='favicon.ico' type='image/x-icon'/ > 
+ <link href="plugins/videojs/css/video-js.css" rel="stylesheet" type="text/css">
+ <link href="css/styles.css" rel="stylesheet" type="text/css">
+ <link href="css/color.css" rel="stylesheet" type="text/css">
+ <link href="css/arrow.css" rel="stylesheet" type="text/css">
  
  <!-- Vector JS -->
-  <script src="../Uploads_Members/vector/js/jquery.js"></script>
-  <script src="../Uploads_Members/vector/js/paper.js"></script>
-  <script src="../Uploads_Members/vector/js/codemirror.js"></script>
-  <script src="../Uploads_Members/vector/js/scripts.js"></script>
-
- 
+  <script src="vector/js/jquery.js"></script>
+  <script src="vector/js/paper.js"></script>
+  <script src="vector/js/codemirror.js"></script>
+  <script src="vector/js/scripts.js"></script>
 
 </head>
 
@@ -44,7 +41,7 @@
            
           <div class="timerbar" style="text-align:center">
            <span class="closebtn2">&#11097;</span>
-            <button class="timerbutton timerbutton6" href="#" onclick='window.open("https://rec.41off.com");return false;'>[\+/]<span class="tbtext">&nbsp;&nbsp;Screen Recorder (Chrome works best).</span></button>
+            <button class="timerbutton timerbutton6" href="#" onclick='window.open("https://rec.41off.com");return false;'>[\+/]</button>
             <button id="timerbutton5" class="timerbutton" onClick="multiStart()" value="Play">Play/Pause<span class="tbtext">This Video Player seems to function better with Chrome browser.</span></button>
             <button class="timerbutton" id="timerbutt1_8" onClick="multiSlow()" value="+1/8X">+1/8X<span class="tbtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click twice to initiate.</span></button>
             <button class="timerbutton" id="timerbutt1_16" onClick="multiSuperSlow()" value="+1/16x">+1/16X</button> 
@@ -69,7 +66,7 @@
               
       <div id="modal"><span class="closebtn2">&#11097;</span> 
           </div> 
-             
+     
      <div class="playlist" style="text-align:left">
       <span class="closebtn2">&#11097;</span>
           <center>Playlist<br>Click &#x21A1; Twice<br></center>
@@ -286,8 +283,57 @@ function onMouseUp(event) {
     <canvas id="video-canvas"></canvas>	 	
  
   </div>
+  
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementByClassName("toolblock"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "footer")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
               
-   
+   <div class="toolblock">
+  <div class="toolblockfooter"></div>
+  <p></p>
+ </div>
     
 	 					<div class="play_block_center">
 							<div class="toolblock">
@@ -1259,5 +1305,4 @@ $(document).ready(function(e)
     timer.mode(0);
 });
 </script>
-  </body>
-</html>
+
