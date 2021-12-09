@@ -366,6 +366,23 @@ function drawLine() {
             isDownAngle = false;
             rotateText(line2);
        }
+       
+     /*  
+        var btn = document.getElementById("modal");
+      
+            if (btn.value == "line") {
+              btn.value = "line";
+              btn.innerHTML = '<button id="modtext">Draw Line</button>';              
+            
+              }
+            else {
+              btn.value = "line";
+              btn.innerHTML = '<button id="modtext">Line Draw&#8665;</button>';
+              
+              }
+        */
+       
+       
     });
     canvas1.on('object:rotating', function (e) {
         if(typeof e.target.lineText != "undefined"){
@@ -486,6 +503,21 @@ function drawCircle() {
     canvas1.on('mouse:up', function (o) {
         isDown = false;
     });
+    
+    
+   /* var btn = document.getElementById("modal");
+      
+            if (btn.value == "circle") {
+              btn.value = "circle";
+              btn.innerHTML = '<button id="modtext">Draw Circle</button>';              
+            
+              }
+            else {
+              btn.value = "circle";
+              btn.innerHTML = '<button id="modal">Circle Draw&#8665;</button>';
+              
+              }
+  */
 
 }
 
@@ -615,8 +647,8 @@ function createTriangle(left, top, line1, line2, line3, line4) {
       ({left: left,
         top: top,
         strokeWidth: 3,
-        fill: 'black',
-        stroke: 'black',
+        fill: 'white',
+        stroke: 'red',
         angle: -180,
         width: 5,
         height: 5
@@ -634,7 +666,7 @@ function createTriangle(left, top, line1, line2, line3, line4) {
 
 function makeLineForTriangle(coords) {
       return new fabric.Line(coords, {
-        fill: 'red',
+        fill: 'white',
         stroke: 'red',
         strokeWidth: 2,
         selectable: false
