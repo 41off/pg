@@ -97,6 +97,117 @@ body {
     background-color: #555555; 
     
 }
+
+.viewerbar {
+    position: absolute;
+    display:inline-block;
+    padding-top:0px;
+    left:15px;
+    top: 2%;
+    height: 46px;
+    width:320px;
+    opacity: .25;
+    transition: opacity 30s;
+    background-color: transparent;
+    border: 0px;
+    border-color: transparent;
+    border-radius: 8px;
+    border-style: double;
+    overflow:hidden;
+    -webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeout 15s; /* Firefox < 16 */
+        -ms-animation: fadeout 15s; /* Internet Explorer */
+         -o-animation: fadeout 15s; /* Opera < 12.1 */
+            animation: fadeout 15s;  
+  
+-webkit-animation: fadein 15s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 15s; /* Firefox < 16 */
+        -ms-animation: fadein 15s; /* Internet Explorer */
+         -o-animation: fadein 15s; /* Opera < 12.1 */
+            animation: fadein 15s;
+}
+
+.viewerbar:hover {
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 12px;
+    opacity: 1;
+    transition: opacity 2s;
+}
+
+.viewbarbtn {
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family:Verdana;
+    line-height:18px;
+    left:0%;
+    margin: 0px 0px;
+    margin-top: 0px;
+    padding-top:0px;
+    padding-bottom:0px;
+    padding-left:0px;
+    padding-right:0px;
+    width: 110px; 
+    height: 40px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: normal;
+    color: white;
+    border: 2px;
+    border-color: lime;
+    border-radius: 8px;
+    border-style: inset;
+    position:absolute
+ 
+    
+}
+
+.viewbarbtn:hover {
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+
+}
+
+.viewbarbtn .viewtext {
+  visibility: hidden;
+  width: 305px;
+  height:40px;
+  background-color: silver;
+  color: white;
+  font-size: 16px;
+  font-family:Verdana;
+  text-decoration:none;
+  text-align: left;
+  line-height:20px;
+  border-width:2px;
+  border-style:double;
+  border-color:white;
+  border-radius: 8px;
+  left: 0%;
+  top: 0%;
+  /* Position the tooltip and allow text centered verticall/horizontally paading left/right for text away from border */
+  position: absolute;
+  
+  display: table-cell;
+  vertical-align: middle;
+  
+  justify-content: center;
+  align-items: center;
+
+  padding-left:5px;
+  
+}
+
+.viewbarbtn:hover .viewtext, .viewbarbtn:focus .viewtext, .viewbarbtn:focus-within .viewtext {
+  visibility: visible;
+  overflow:visible;
+}
+
+
 .timerbar {
     position: absolute;
     display: block;
@@ -104,7 +215,7 @@ body {
     right:15px;
     top: 2%;
     height: 40px;
-    width:1150px;
+    width:950px;
     opacity: .25;
     transition: opacity 30s;
     background-color: transparent;
@@ -119,7 +230,7 @@ body {
          -o-animation: fadeout 15s; /* Opera < 12.1 */
             animation: fadeout 15s;  
   
--webkit-animation: fadein 15s; /* Safari, Chrome and Opera > 12.1 */
+    -webkit-animation: fadein 15s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 15s; /* Firefox < 16 */
         -ms-animation: fadein 15s; /* Internet Explorer */
          -o-animation: fadein 15s; /* Opera < 12.1 */
@@ -271,13 +382,14 @@ body {
 
 .timerbutton .tbtext {
   visibility: hidden;
-  width: 100px;
-  height:200px;
+  width:350px;
+  height:40px;
   background-color: black;
   border-color: silver;
   color: white;
+  text-align:center;
   text-decoration:blink;
-  font-size:16px;
+  font-size:14px;
   font-weight:bold;
   text-align: center;
   padding-left: 5px;
@@ -286,10 +398,10 @@ body {
   align-items: center;
   border-width:2px;
   border-style:inset;
-  border-radius: 6px;
-  line-height: 20px;
-  left: 0px;
-  top: 0%;
+  border-radius: 10px;
+  line-height: 18px;
+  right: 0%;
+  bottom: 0%;
   /* Position the tooltip */
   position: absolute;
   overflow:visible
@@ -386,7 +498,7 @@ body {
     border-color: transparent;
     border-radius: 10px;
     border-style:double;
-    width: 160px;
+    width: 100px;
 }
 
 #timerbutton5:hover {
@@ -490,17 +602,17 @@ body {
     right: 15px;
     padding-top: 0px;
     padding-bottom:0px;
-    padding-left:3px;
+    padding-left:0px;
     background-color: transparent;
     border: 3px;
     border-color: lime;
     border-radius: 8px;
     border-style: double;
-    height:375px;
-    width:120px;
+    height:400px;
+    width:110px;
     font-family: "Arial Narrow", Arial, sans-serif;
     font-size: 18px;
-    line-height: 24px;
+    line-height: 22px;
     color: white;
     opacity: .15;
     transition: opacity 10s;
@@ -534,7 +646,7 @@ body {
     text-align: left;
     background-color: transparent;
     font-size: 16px;
-    margin: 0px 0px;
+    margin: 2px 2px;
     padding-top:2px;
     padding-bottom:2px;
     padding-left:1px;
@@ -559,7 +671,7 @@ body {
 
 .playlistbutton .plbtext {
   visibility: hidden;
-  width: 175px;
+  width: 140px;
   height:70px;
   background-color: black;
   border-color: silver;
@@ -576,8 +688,8 @@ body {
   border-style:inset;
   border-radius: 6px;
   line-height: 20px;
-  right: 15%;
-  bottom: 0%;
+  right: 0%;
+  bottom: 7%;
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
@@ -586,6 +698,66 @@ body {
 .playlistbutton:hover .plbtext, .playlistbutton:focus .plbtext, .playlistbutton:focus-within .plbtext {
   visibility: visible;
 }
+
+
+
+.uploadbutton {
+    text-align: left;
+    background-color: transparent;
+    font-size: 16px;
+    margin: 0px 0px;
+    padding-top:2px;
+    padding-bottom:2px;
+    padding-left:1px;
+    width: 100px; 
+    height: 20px;
+    cursor: pointer;
+    color:white;
+    border-color:transparent;
+    border-width: 0px;
+}
+
+.uploadbutton:hover {
+    color:blue;
+    text-decoration:underline 
+}
+
+.uploadbutton:focus-within {
+  color: black;
+  font-weight:normal;
+  text-decoration:underline;
+}
+
+.uploadbutton .uptext {
+  visibility: hidden;
+  width: 110px;
+  height:400px;
+  background-color: black;
+  border-color: silver;
+  color: white;
+  font-size:16px;
+  text-decoration:blink;
+  font-weight:bold;
+  text-align: left;
+  padding-left: 5px;
+  margin-left: 0px;
+  display: inline-flex;
+  align-items: center;
+  border-width:2px;
+  border-style:inset;
+  border-radius: 6px;
+  line-height: 20px;
+  right: 0%;
+  bottom: 5%;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.uploadbutton:hover .uptext, .uploadbutton:focus .uptext, .uploadbutton:focus-within .uptext {
+  visibility: visible;
+}
+
 
 
 #addtextbutton {
@@ -615,22 +787,18 @@ body {
 }
 
 
-#modal {
-    visibility: hidden;
-   
-}
 
-#modtext{
+#viewer{
     visibility: visible;
     position:absolute;
-    border:3px #666666 solid;
+    border:3px lime solid;
     border-radius: 8px;
     border-bottom-style:double;
-    background-color: black;
+    background-color: silver;
     font-size:20px;
     font-family:"Verdana";
     color:white;
-    text-align:left;
+    text-align:cnter;
     text-decoration:blink;
     display: block;
     align-items: center;
@@ -642,7 +810,51 @@ body {
     padding-left: 2px;
     padding-bottom: 4px;    
     min-width: 120px;
-    bottom:480px;
+    bottom:520px;
+}
+
+#viewer:hover {
+    color:black;
+    background-color: white;
+    text-decoration:underline 
+}
+
+#viewer:focus {
+  color: black;
+  font-weight:bold;
+  text-decoration:underline;
+}
+
+
+
+#modal {
+    visibility: hidden;
+   
+}
+
+#modtext{
+    visibility: visible;
+    position:absolute;
+    border:3px lime solid;
+    border-radius: 8px;
+    border-bottom-style:double;
+    background-color: silver;
+    font-size:20px;
+    font-family:"Verdana";
+    color:white;
+    text-align:cnter;
+    text-decoration:blink;
+    display: block;
+    align-items: center;
+    line-height:22px;    
+    right:15px;    
+    height: 55px;
+    width:120px;    
+    padding-top: 3px;
+    padding-left: 2px;
+    padding-bottom: 4px;    
+    min-width: 120px;
+    bottom:520px;
 }
 
 #modtext:hover {
@@ -1181,69 +1393,87 @@ ul{list-style-type: disc; color:red
 .toolblock .inner_tool {
     width: 100%;
     overflow: hidden;
+   
 }
 .toolblock .inner_tool button {
-    width: 36px;
-    height: 36px;
-    line-height: 34px;
+    width: 38px;
+    height: 38px;
+    line-height: 36px;
     background: pink;
     border: 1px solid red;
     border-radius: 4px;
     float: left;
     padding: 0px;
-    margin:2px 2px
+    margin:2px 2px;
+    font-size:28px;
+    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
 }
 .toolblock .inner_tool button:last-child {
-     border-right: 1px solid #cccccc;
+     border-right: 3px dotted red;
     }
 .toolblock .inner_tool button.active {
     background: #E9E9E9;
 }
 .toolblock .inner_tool button .toolicon1 {
-    background-position: -142px 0;
+    background-position: -701px 0;
 }
 .toolblock .inner_tool button .toolicon2 {
-    background-position: -160px 0;
+    background-position: -656px 0;
 }
 .toolblock .inner_tool button .toolicon3 {
-    background-position: -178px 0;
+    background-position: -610px -3px;
 }
 .toolblock .inner_tool button .toolicon4 {
-    background-position: -196.5px 0;
+    background-position: -559px 0;
 }
 .toolblock .inner_tool button .toolicon5 {
-    background-position: -102px 0;
+    background-position: -513px 0;
 }
 .toolblock .inner_tool button .toolicon6 {
-    background-position: -122px 0;
+    background-position: -465px 0;
 }
 .toolblock .inner_tool button .toolicon7 {
-    background-position: -81px 0;
+    background-position: -415px 0;
 }
 .toolblock .inner_tool button .toolicon8 {
-    background-position: -60px 0;
+    background-position: -375px 0;
 }
 .toolblock .inner_tool button .toolicon9 {
-    background-position: -20px 0;
+    background-position: -325px 0;
 }
 .toolblock .inner_tool button .toolicon10 {
-    background-position: -40px 0;
+    background-position: -290px 0;
 }
 .toolblock .inner_tool button .toolicon11 {
-    background-position: -0px 0;
+    background-position: -245px 0;
 }
 .toolblock .inner_tool button .toolicon12 {
-    background-position: -216px 0;
+    background-position: -215px 0;
 }
 
+.toolblock .inner_tool button .toolicon13 {
+    background-position: -170px 0;
+}
+
+.toolblock .inner_tool button .toolicon14 {
+    background-position: -145px 0;
+}
+
+.toolblock .inner_tool button .toolicon15 {
+    background-position: -100px 0;
+}
+
+
 .toolblock .inner_tool button i {
-    background: url('../images/toolimg2.png') no-repeat;
-    width: 18px;
-    height: 18px;
+    background: url('../images/toolimg5.png') no-repeat;
+    width: 36px;
+    height: 36px;
     display:block;
     margin: 2px auto;
     border:thin;border-color:black
 }
+
+
             
 </style>
 
