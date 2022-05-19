@@ -1,72 +1,72 @@
-﻿function _timer(callback)
+﻿function _timerR(callback)
 {
-    var time = 0;     //  The default time of the timer
+    var timeR = 0;     //  The default time of the timer
     var mode = 1;     //    Mode: count up or count down
-    var status = 0;    //    Status: timer is running or stoped
-    var timer_id;    //    This is used by setInterval function
+    var statusR = 0;    //    Status: timer is running or stoped
+    var timerR_id;    //    This is used by setInterval function
     
     // this will start the timer ex. start the timer with 1 second interval timer.start(1000) 
-    this.start = function(interval)
+    this.start = function(intervalR)
     {
-        interval = (typeof(interval) !== 'undefined') ? interval : 0;
+        intervalR = (typeof(intervalR) !== 'undefined') ? intervalR : 0;
  
-        if(status == 0)
+        if(statusR == 0)
         {
-            status = 1;
-            timer_id = setInterval(function()
+            statusR = 1;
+            timerR_id = setInterval(function()
             {
                 switch(mode)
                 {
                     default:
-                    if(time)
+                    if(timeR)
                     {
-                        time--;
+                        timeR--;
                         generateTime();
-                        if(typeof(callback) === 'function') callback(time);
+                        if(typeof(callbackR) === 'function') callbackR(timeR);
                     }
                     break;
                     
                     case 1:
-                    if(time < 86400)
+                    if(timeR < 86400)
                     {
-                        time++;
+                        timeR++;
                         generateTime();
-                        if(typeof(callback) === 'function') callback(time);
+                        if(typeof(callbackR) === 'function') callbackR(timeR);
                     }
                     break;
                 }
-            }, interval);
+            }, intervalR);
         }
     }
     
     //  Same as the name, this will stop or pause the timer ex. timer.stop()
     this.stop =  function()
     {
-        if(status == 1)
+        if(statusR == 1)
         {
-            status = 0;
-            clearInterval(timer_id);
+            statusR = 0;
+            clearInterval(timerR_id);
         }
     }
     
     // Reset the timer to zero or reset it to your own custom time ex. reset to zero second timer.reset(0)
     this.reset =  function(sec)
     {
-        sec = (typeof(sec) !== 'undefined') ? sec : 0;
-        time = sec;
-        generateTime(time);
+        secR = (typeof(secR) !== 'undefined') ? secR : 0;
+        timeR = sec;
+        generateTime(timeR);
     }
     
     // Change the mode of the timer, count-up (1) or countdown (0)
-    this.mode = function(tmode)
+    this.mode = function(tmodeR)
     {
-        mode = tmode;
+        mode = tmodeR;
     }
     
     // This methode return the current value of the timer
     this.getTime = function()
     {
-        return time;
+        return timeR;
     }
     
     // This methode return the current mode of the timer count-up (1) or countdown (0)
@@ -78,52 +78,52 @@
     // This methode return the status of the timer running (1) or stopped (1)
     this.getStatus
     {
-        return status;
+        return statusR;
     }
     
     // This methode will render the time variable to hour:minute:second format
     function generateTime()
     {
-        var milli = time % 100;
-        var second = Math.floor(time / 100) % 60;
-        var minute = Math.floor(time / 6000) % 60;
-        var hour = Math.floor(time / 360000) % 24;
+        var milliR = timeR % 100;
+        var secondR = Math.floor(timeR / 100) % 60;
+        var minuteR = Math.floor(timeR / 6000) % 60;
+        var hourR = Math.floor(timeR / 360000) % 24;
         
-        milli = (milli < 10) ? '0'+milli : milli;
-        second = (second < 10) ? '0'+second : second;
-        minute = (minute < 10) ? '&nbsp;0'+minute : minute;
-        hour = (hour < 10) ? '0'+hour : hour;
+        milliR = (milliR < 10) ? '0'+milliR : milliR;
+        secondR = (secondR < 10) ? '0'+secondR : secondR;
+        minuteR = (minuteR < 10) ? '&nbsp;0'+minuteR : minuteR;
+        hourR = (hourR < 10) ? '0'+hourR : hourR;
         
-        $('div.dropdown2 span.milli').html(milli);
-        $('div.dropdown2 span.second').html(second);
-        $('div.dropdown2 span.minute').html(minute);
-        $('div.dropdown2 span.hour').html(hour);
+        $('div.timerR span.milliR').html(milliR);
+        $('div.timerR span.secondR').html(secondR);
+        $('div.timerR span.minuteR').html(minuteR);
+        $('div.timerR span.hourR').html(hourR);
     }
 }
  
 // example use
-var timer;
+var timerR;
  
 $(document).ready(function(e) 
 {
-    timer = new _timer
+    timerR = new _timerR
     (
-        function(time)
+        function(timeR)
         {
-            if(time == null)
+            if(timeR == null)
             {
-                timer.stop();
+                timerR.stop();
                 alert('Out The Gates!!!');
             }
         }
     );
-    timer.reset(0);
-    timer.mode(0);
+    timerR.reset(0);
+    timerR.mode(0);
 });
 
 
-function timerStart() {
-      var btn = document.getElementsByClassName("dropdown2");
+function timerRStart() {
+      var btn = document.getElementsByClassName("timerR");
       
    /*   var w = window.open('','','width=300,height=30')
       
@@ -134,29 +134,29 @@ function timerStart() {
               w.focus();  */
              btn.value = "Play Both";
              btn.innerHTML = "";
-             timer.start(10);
+             timerR.start(10);
              
                 }
          else {
              btn.value = "Pause Both";
              btn.innerHTML = "";
-             timer.stop();
+             timerR.stop();
               }
               
-     if(timer.stop){
+     if(timerR.stop){
       
-      timer.start(10);
-      timer.mode(1);      
+      timerR.start(10);
+      timerR.mode(1);      
      } 
        else {
-            timer.stop();
+            timerR.stop();
      }
 }
 
 
 
 function timeStop() {
-    timer.reset(0);
+    timerR.reset(0);
     
     
    

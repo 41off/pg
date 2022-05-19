@@ -1,6 +1,6 @@
 ﻿<html>
 <head>
-    <title>PG Video Player</title>
+    <title>Mono Video Player</title>
     
 <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -12,109 +12,125 @@
 
  <link rel='icon' href='favicon.ico' type='image/x-icon'/ > 
  <link href="plugins/videojs/css/video-js.css" rel="stylesheet" type="text/css">
- <link href="css/styles.css" rel="stylesheet" type="text/css">
+ <link href="css/stylesL.css" rel="stylesheet" type="text/css">
+ <link href="css/slidebardropL.css" rel="stylesheet" type="text/css">
  
- <!-- Vector JS -->
-  <script src="vector/js/jquery.js"></script>
-  <script src="vector/js/paper.js"></script>
-  <script src="vector/js/codemirror.js"></script>
-  <script src="vector/js/scripts.js"></script>
+  <link rel="stylesheet" href="css/popoverL.css">
+ 
+ <script src="js/jquery-3.6.0.js"></script>
+ <script src="js/jquery-ui.js"></script>
+ 
+ 
+ <script src="js/bootstrap_popup.min.js"></script> 
 
 </head>
 
 
-<body onload="onload()">
+<script>
 
-    <div id="stage">
+window.addEventListener("load", function B() { onloadL() })
+
+</script>
+
+
+
+<body >
+       
+        
+
+<div id="wrap">
+
+ 
+
+ <div  class="timer">
+             <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
+             <span title="Drag Timer elsewhere as needed" class="drag">&nbsp;&nbsp;&#10016;</span>
+         </div> 
+    
+    <div class="paperscriptM">
+         <canvas id="video-canvas1" height="1080" width="1960"></canvas>
+         <canvas id="video-canvas"></canvas>
+       </div>
+
+  <div id="wrapL">
   
-             <video id="video" controls muted loop
-                     onclick="this.paused? ClickPause():ClickStart(); this.paused? timer.start(10):timer.stop(0)" onended="onVideoEnded();">
+   <div id="stageL">
+         
+               <video id="video" controls muted loop
+                     onclick="this.paused? ClickPauseL():ClickStartL(); this.paused? timer.start(10):timer.stop(0)" onended="onVideoEndedL();">
                     <source type="video/mp4">
                     <source type="video/ogg">
-                    <source type="video/ts">
-                    <source type="video/mkv">
                     <source type='video/webm; codecs="vp8, vorbis"'>
                </video>
-           </div>
-          
-          
-          <div class="viewerbar" style="text-align:center">
-            <button class="viewbarbtn" href="#" onclick='window.open("https://video.41off.com/pg");return false;'>Side-by-Side<span class="viewtext">Open Side-by-Side Viewer to analyze your V1.mp4 vs. V2.mp4 clips.</span></button>
-          
-          
-          
-          </div>
-
-
-
- 
-          <div class="timerbar" style="text-align:center">
-           <span class="closebtn2">&#11097;</span>
-            <button class="timerbutton timerbutton6" href="#" onclick='window.open("https://rec.41off.com");return false;'>[\+/]</button>
-            <button id="timerbutton5" class="timerbutton" onClick="multiStart()" value="Play">Play/Pause<span class="tbtext">This Video Player seems to function better with Chrome browser.</span></button>
-            <button class="timerbutton" id="timerbutt1_8" onClick="multiSlow()" value="+1/8X">+1/8X<span class="tbtext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click twice to initiate.</span></button>
-            <button class="timerbutton" id="timerbutt1_16" onClick="multiSuperSlow()" value="+1/16x">+1/16X</button> 
-            <button class="timerbutton timerbutton1" id="negative2">-1/8X<span class="tbtext">Click blue "Pause" button to the left first. Click here for 20" rewind loop, wait for completion! Then re-click or choose other player button.</span></button>
-            <button class="timerbutton timerbutton1" id="negative" >-1X<span class="tbtext">Click blue "Pause" button to the left first. Click here for 20" rewind loop, wait for completion! Then re-click or choose other player button.</span></button >
-            <button class="timerbutton timerbutton1" id="negative3">-4X<span class="tbtext">Click blue "Pause" button to the left first. Click here for 20" rewind loop, wait for completion! Then re-click or choose other player button.</span></button> 
-            <button class="timerbutton" id="speed4x" onClick="multiFwd()" value="4X">+4X</button>
-            <button class="timerbutton" id="speed16x" onClick="multiSupFwd()" value="16X">+16X</button>               
-            <button class="timerbutton" id="timerbuttonreset" onclick="on0()">Repeat</button> 
-            <button class="timerbutton timerbutton3" id="timerbutt1_8" onClick="onVideoNext()">Next</button>
-            <button class="timerbutton timerbutton3" id ="negative2" onClick="onVideoBack()">Prior</button>
-            <button class="timerbutton" id="timerbuttonreset" onClick="multiReset()">Reset&nbsp;&#x21f2;</button>             
-          </div> 
-               
-         <div class="timer">
-             <span class="closebtn2">&#11097;</span>
-              <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
-           </div>
-   
-        <div class="controls"><span class="closebtn2">&#11097;</span> 
-          </div> 
-              
-      <div id="modal"><span class="closebtn2">&#11097;</span> 
-          </div> 
      
-     <div class="playlist" style="text-align:left">
-      <span class="closebtn2">&#11097;</span>
-          <center>Playlist<br>Click &#x21A1; Twice<br></center>
-            <left>
-               <button class="playlistbutton" onclick="on0()"><li>Latest</li></button>
-               <button class="playlistbutton" onclick="on1()"><li>V1.mp4</li></button>
-               <button class="playlistbutton" onclick="on2()"><li>V2.mp4</li></button>
-               <button class="playlistbutton" onclick="on3()"><li>V3.mp4</li></button>
-               <button class="playlistbutton" onclick="on4()"><li>V4.mp4</li></button>
-               <button class="playlistbutton" onclick="on5()"><li>V5.mp4</li></button>
-               <button class="playlistbutton" onclick="on6()"><li>V6.mp4</li></button>
-               <button class="playlistbutton" onclick="on7()"><li>V7.mp4</li></button>
-               <button class="playlistbutton" onclick="on8()"><li>V8.mp4</li></button>
-               <button class="playlistbutton" onclick="on9()"><li>V9.mp4</li></button>
-               <button class="playlistbutton" onclick="on10()"><li>V10.mp4</li></button>
-               <button class="playlistbutton" onclick="on11()"><li>V11.mp4</li></button>
-               <button class="playlistbutton" onclick="on12()"><li>V12.mp4</li></button>
-
-
-       <!--    <button class="playlistbutton" onclick="processVector(event, drag)"><li>Clip 12</li></button>   -->
-               <button class="playlistbutton" href="#" onclick='window.open("https://rec.41off.com");return false;'><li>RECORD</li><span class="plbtext">Click to screen recorder (Chrome works best)</span></button>
-               <button class="uploadbutton" href="#" onclick='window.open("https://www.dropbox.com/sh/97fpvdrkmne42or/AABREWUct3ot4TjNEvCHSq15a?dl=0");return false;'><li>UPLOAD</li><span class="uptext">Upload to DropBox. Drag and Drop mp4 files of choice  
-                                                                  that you renamed to "V1.mp4", "V2.mp4", etc. Do not delete and replace the files, otherwise the URL link will change making the clips unviewable in the above playlist links </span></button>
-           </left>                
-       </div>
-   
-       <div class="paperscript">
-
-    <canvas id="video-canvas1" height="780" width="1580" overflow="hidden"></canvas>
+     <button class="Mbtn ML" title="View Side-By-Side Player" href="#" onclick="window.location.href='player.html';">[\\+//]</button>
+     
+     <button class="popmenu" title="Click here or anywhere outside gray box to close menu" data-toggle="popover" data-placement="left" data-html="true" 
+                           data-content="
+                           
+1.) Click “Choose your own .mp4” to play a video clip from your machine. The script in this player renders your .mp4 file (only .mp4 files are supported) as an URL object allowing the HTML5 features in your browser to stream the file locally. Chrome is the best browser, Mozilla is decent. Have not tried with Safari.
+<br>
+<br>
+2.)	Clips of Pro Skiers or Club members are found in the respective dropdown menus at bottom left of each screen.
+<br>
+<br>
+3.)	Some member clips are automatically “paired” to a Pro skier in the Right Side Player.
+<br>
+<br>
+4.)	Pro Skier clips labeled at speeds below their actual have been rendered with reduced rates accordingly. I.e.,  N. Smith clips at 52k were rendered at 52/58 rates. It may not be ideal with regard to edge change position, but is likely reasonable to study time from buoy to centerline.
+<br>
+<br>
+5.)	Click anywhere outside this menu to close it.
+">Click for Pop-Out Menu</button>
+     
+     <input type="file" class="custom-file-input" accept="video/mp4"/>
     
-    <canvas id="video-canvas"></canvas>	 	
- 
+     <div id="message" display="inline-block"></div> 
+       
+     <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
+     
   </div>
   
-	 					<div class="play_block_center">
-							<div class="toolblock">
-							 <span class="closebtn2">&#11097;</span>
-								Drawing Tools
-								
+   <!--    <div class="double" onclick="window.location.href='player.html';"> 
+           </div>
+   --> 
+         <div class="dropdownL" title="Drag Menu as needed">
+                                     &#10016;
+                                     <button class="dropbtn">PG Clips</button>
+                                       <div class="dropdownL-content">
+                                        
+                                        <a href="#" onclick=on0L()">05-19-2022</a>
+                                        <a href="#" onclick="on1L()">pending</a>
+                                        <a href="#" onclick="on2L()">pending</a>
+                                        <a href="#" onclick="on3L()">pending</a>
+                                        <a href="#" onclick="on4L()">pending</a>
+                                        <a href="#" onclick="onvideoNextL()">Nextr</a>
+                                        <a href="#" onclick="onvideoBackL()">Prior</a>
+                                       </div>
+                               </div>
+                    </div>
+
+         <div class="menubarL" style="text-align:center">
+            <button id="L5" class="Lbtn" onClick="multiStartL()" value="Play">Play</button>
+            <button class="Lbtn" id="L1_8" onClick="multiSlowL()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
+            <button class="Lbtn" id="L1_16" onClick="multiSuperSlowL()" value="+1/16x">+1/16X</button> 
+            <button class="Lbtn Lbtn1" id="negative2L">-1/8X</button>
+            <button class="Lbtn Lbtn1" id="negativeL" >-1X</button >
+            <button class="Lbtn Lbtn1" id="negative3L">-4X</button> 
+            <button class="Lbtn" id="L4x" onClick="multiFwdL()" value="4X">+4X</button>
+            <button class="Lbtn" id="L16x" onClick="multiSupFwdL()" value="16X">+16X</button>               
+            <button class="Lbtn" id="Lreset" onclick="on0L()">Repeat</button> 
+            <button class="Lbtn" id ="Lnegative2" onClick="onvideoBackL()">Prior</button>  
+            <button class="Lbtn" id="Lreset" onClick="onvideoNextL()">Next</button>
+            <button class="Lbtn" id="Lreset" onClick="multiResetL()">&#129148;&nbsp;Reset</button>
+            <span class="drag" title="Drag Left Player Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span>             
+           </div> 
+                
+        <div class="controlsL"><span class="drag" title="Drag Left Zoom Controls elsewhere as needed">&nbsp;&nbsp;&nbsp;&#10016;</span></div> 
+        
+       
+					<div class="toolblock">
+															
 								 <div class="inner_tool">
 									<button class="line-drawing-tools" data-value="circle">
 										<i class="toolicon12"></i><span class="hint">Click to draw circle.</span>
@@ -161,22 +177,47 @@
 							        <button href="javascript:void(0)" class="line-drawing-tools" data-value="clear">
 							            <i class="toolicon11"></i><span class="hint">Click to "delete" all drawn items on the canvas.</span>
 							        </button>
+							        <span class="drag" title="Drag Drawing Tools Bar elsewhere as needed">&nbsp;&nbsp;&#10016;</span>
 							</div>
-						  </div>
-               
+				    	
+             </div>  
+             
+      <script type="text/javascript" src="plugins/41off-drag.popover.closebtn.js"></script>    <!-- within wrap   -->
+        
+ </div>
+      
        					
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
   
-  <script src="js/jquery-3.2.1.slim.min.js"></script>
-  <script src="js/jquery-2.1.4.js"></script>
+  
+  
+  
   
    <!-- Text - Color Palette JS -->
    <script src="plugins/textbox.js"></script>
    
+   
+  
+
+   <script type="text/javascript" src="plugins/videojs/js/41offvideoSingleEX.js"></script>
+ <!--  <script type="text/javascript" src="plugins/videojs/js/41offvideoR.js"></script>  -->
+   
+   <script type="text/javascript" src="plugins/41offtimerBoth.js"></script>
+   <script type="text/javascript" src="plugins/41offtimerR.js"></script>
+   
+   
+   <script type="text/javascript" src="plugins/41offzoomL.js"></script>
+   
+   <script type="text/javascript" src="plugins/41offzoomR.js"></script>
+   
+   <script type="text/javascript" src="plugins/41off-drag.js"></script>
+
+   
  <!-- Video JS -->
    <script src="plugins/fabric/fabric.min.js"></script>
-   <script src="js/commanFunction.js"></script>
+   <script src="js/commonFunctionBoth.js"></script>
   
  
 <script>
@@ -191,10 +232,6 @@ for (i = 0; i < close.length; i++) {
 }
 </script>
 
-
-<script type="text/javascript" src="plugins/41offzoom.js"></script>
-<script type="text/javascript" src="js/jquery-1.7.js"></script>
-<script type="text/javascript" src="plugins/videojs/js/41offvideo.js"></script>
-<script type="text/javascript" src="plugins/41offtimer.js"></script>
-
+</body>
+</html>
 

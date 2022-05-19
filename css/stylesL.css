@@ -1,175 +1,177 @@
 ﻿
-/*
-html {
-  overflow:   scroll;
-}
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent 
-}
-*/
 
 body {
-  background: -webkit-linear-gradient(top, gray, silver);
+  background-color: silver;
   width:99%; height:96vh;
   object-fit: contain;
-  overflow-y:visible;
-  overflow-x: hidden;
+  overflow:visible
   
 }
 
-.input[type=file]::-webkit-file-upload-button {
+
+.custom-file-input::-webkit-file-upload-button {
   visibility: hidden;
-  z-index:7;
   
 }
 
-.input[type=file]::before {
-  content: 'Click to Load your local .mp4 video';
+.custom-file-input::before {
+  content: 'Choose your own .mp4 video';
   display: inline-block;
   background: -webkit-linear-gradient(top, lightgray, black);
-  border: 0.3vmin #999;
-  border-radius: 0.6vmin;
-  border-style:double;
-  margin-right: 1vmin;
-  margin-left: 0.5vmin;
-  margin-top: 0.3vmin;
-  padding-top:0.1vmin;
-  padding-bottom:0.1vmin;
-  padding-left:1vmin;
-  padding-right:1vmin;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
   cursor: pointer;
-  text-shadow: 0.1vmin 0.1vmin black;
-  font-weight: 500;
-  font-size: 1.5vmin;
+  text-shadow: 1px 1px black;
+  font-weight: 700;
+  font-size: 10pt;
   color:white;
-  float:left;
-  width:auto;
-  overflow:visible;
-
-
 }
-
-.input[type=file]:hover::before {
+.custom-file-input:hover::before {
   border-color: black;
   background: -webkit-linear-gradient(top, lightyellow, lightpink);
-  text-shadow: 0.1vmin 0.1vmin silver;
+  text-shadow: 1px 1px silver;
   color:black;
 
 }
-.input[type=file]:active::before {
+.custom-file-input:active::before {
   background: -webkit-linear-gradient(top, pink, #f9f9f9);
 }
 
 
 
-.input[type=file]::file-selector-button  {
-  visibility: visible;
-  content: 'Click to Load your local .mp4 video';
-  
-  z-index:7;
+
+.single::-webkit-file-upload-button {
+  visibility: hidden;
   
 }
 
-.input[type=file]::file-selector-button::before {
-  content: 'Click to Load your local .mp4 video';
+.single::before {
+  content: 'View this Player Only';
   display: inline-block;
   background: -webkit-linear-gradient(top, lightgray, black);
-  border: 0.3vmin #999;
-  border-radius: 0.6vmin;
-  border-style:double;
-  margin-right: 1vmin;
-  margin-left: 0.5vmin;
-  margin-top: 0.3vmin;
-  padding-top:0.1vmin;
-  padding-bottom:0.1vmin;
-  padding-left:0.25vmin;
-  padding-right:0.25vmin;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
   cursor: pointer;
-  text-shadow: 0.1vmin 0.1vmin black;
-  font-weight: 600;
-  font-size: 1.5vmin;
+  text-shadow: 1px 1px black;
+  font-weight: 700;
+  font-size: 10pt;
   color:white;
-  float:left;
-  width:auto;
-  overflow:visible;
-}
 
-.input[type=file]::file-selector-button:hover::before {
+   
+}
+.single:hover::before {
   border-color: black;
   background: -webkit-linear-gradient(top, lightyellow, lightpink);
-  text-shadow: 0.1vmin 0.1vmin silver;
+  text-shadow: 1px 1px silver;
   color:black;
 
 }
-
-.input[type=file]::file-selector-button:active::before {
+.single:active::before {
   background: -webkit-linear-gradient(top, pink, #f9f9f9);
 }
+
+
+
+.double::-webkit-file-upload-button {
+  visibility: hidden;
+  
+}
+
+.double::before {
+  content: 'Go Back to Side-by-Side View';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, lightgray, black);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px black;
+  font-weight: 700;
+  font-size: 10pt;
+  color:white;
+}
+.double:hover::before {
+  border-color: black;
+  background: -webkit-linear-gradient(top, lightyellow, lightpink);
+  text-shadow: 1px 1px silver;
+  color:black;
+
+}
+.double:active::before {
+  background: -webkit-linear-gradient(top, pink, #f9f9f9);
+}
+
 
 
 
 
 .timer {
     position:absolute;
-    border:0.25vmin #666666 solid;
-    border-radius: 0.5vmin;
+    border:2px #666666 solid;
+    border-radius: 4px;
     background-color: black;
-    line-height:2vmin;
-    font-size:2vmin;
+    line-height:20px;
+    font-size:18px;
     font-family:"Verdana";
     color:white;
     text-align:left;    
-    height: 2vmin;
+    height: 24px;
     width:auto;    
-    padding-top: 0.1vmin;
-    padding-left: 1vmin;
-    padding-right:1vmin;
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-right:3px;
     margin:auto;
-    display: inline-block;    
-    left:22%;   
-    bottom:30%;
-    z-index:5;
+    display: block;
+    min-width: 100px;
+    left:43%;   
+    bottom:13%;
+    
 }
 
 .timer:hover {
-    border:0.25vmin red solid;
+    border:2px red solid;
+    border-radius: 4px;
     background-color: #555555; 
 }
 
 
 .timerR {
     position:absolute;
-    border:0.25vmin #666666 solid;
-    border-radius: 0.5vmin;
+    border:2px #666666 solid;
+    border-radius: 4px;
     background-color: black;
-    line-height:2vmin;
-    font-size:2vmin;
+    line-height:20px;
+    font-size:18px;
     font-family:"Verdana";
     color:white;
     text-align:left;    
-    height: 2vmin;
-    width:auto;
-    padding-top: 0.1vmin;
-    padding-left: 1vmin;
-    padding-right:1vmin;
+    height: 24px;
+    width:auto;    
+    padding-top: 3px;
+    padding-left: 5px;
+    padding-right:3px;
     margin:auto;
-    display:inline-block;
-    left:72%;   
+    display: block;
+    min-width: 100px;
+    left:80%;   
     bottom:30%;
-    z-index:5;
 }
-
-.timerR:hover {
-    border:0.25vmin red solid;
+.timer:hover {
+    border:2px red solid;
+    border-radius: 4px;
     background-color: #555555; 
-   
+    
 }
 
 
@@ -177,31 +179,31 @@ body {
 .menubarB {
     position: absolute;
     display:inline-block;
-    padding-top: 0.25vmin;
-    left:38%;
-    bottom: 7%;
-    height: 3vmin;
-    width:auto;
-    min-width:20vw;
-    padding-bottom:0.25vmin;
+    padding-top:4px;
     margin: 0 auto;
+    left:37%;
+    bottom: 10%;
+    height: 30px;
+    width:auto;
+    min-width:300px;
+    padding:auto;
     opacity: 1.0;
-    transition: opacity 5s;
+    transition: opacity 50s;
     background-color: transparent;
-    border: .25vmin;
+    border: 2px;
     border-color: transparent;
-    border-radius: .5vmin;
+    border-radius: 4px;
     border-style:groove;
     overflow:hidden;
-    z-index:5;
 }
 
 .menubarB:hover {
     background: -webkit-linear-gradient(top, lightgray, black);
     border-color: white;
+    border-radius: 4px;
     color:black;
     opacity: 1;
-    transition: opacity 3s;
+    transition: opacity 2s;
 }
 
 
@@ -210,28 +212,30 @@ body {
 .menubarL {
     position: absolute;
     display:inline-block;
-    padding-top: 0.25vmin;
-    left:1%;
-    bottom: 17%;
-    height: 3vmin;
+    padding-top: 4px;
+    left:30%;
+    bottom: 1%;
+    height: 30px;
     width:auto;
     min-width:400px;
+    padding:auto;
     margin: 0 auto;
     opacity: 1.0;
-    transition: opacity 5s;
+    transition: opacity 50s;
     background-color: transparent;
-    border: .25vmin;
+    border: 2px;
     border-color: transparent;
-    border-radius: .5vmin;
+    border-radius: 4px;
     border-style:groove;
     overflow:hidden;
-    z-index:5;
+    z-index:35;
 
 }
 
 .menubarL:hover {
     background: -webkit-linear-gradient(top, lightgray, black);
     border-color: black;
+    border-radius: 4px;
     color:black;
     opacity: 1;
     transition: opacity 2s;
@@ -241,28 +245,30 @@ body {
 .menubarR {
     position: absolute;
     display:inline-block;
-    padding-top: 0.25vmin;
+    padding-top:4px;
+    float:right;
     left:55%;
     bottom: 17%;
-    height: 3vmin;
+    height: 30px;
     width:auto;
     min-width:400px;
-    margin: 0 auto;
+    padding:auto;
+    margin: 0 auto;;
     opacity: 1.0;
-    transition: opacity 5s;
+    transition: opacity 50s;
     background-color: transparent;
-    border: .25vmin;
+    border: 2px;
     border-color: transparent;
-    border-radius: .5vmin;
+    border-radius: 4px;
     border-style:groove;
     overflow:hidden;
-    z-index:5;
 }
 
 
 .menubarR:hover {
     background: -webkit-linear-gradient(top, lightgray, black);
     border-color: black;
+    border-radius: 4px;
     color:black;
     opacity: 1;
     transition: opacity 2s;
@@ -272,29 +278,12 @@ body {
 
 #Mnegative2 {
     background-color: transparent;
-    font-weight: 600;
+    font-weight: normal;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
-    border-style:groove;
+    border-radius: 4px;
+    border-style:grooved;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
 }
 
 #Mnegative2:hover {
@@ -305,29 +294,15 @@ body {
 
 #Lnegative2 {
     background-color: transparent;
-    font-weight: 600;
-    color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
+    font-weight: normal;
+    color: white;
+    width: auto; 
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding-left:4px;
+    padding-right:4px
     
 }
 
@@ -339,29 +314,15 @@ body {
 
 #Rnegative2 {
     background-color: transparent;
-    font-weight: 600;
-    color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
+    font-weight: normal;
+    color: white;
+    width: auto; 
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding-left:4px;
+    padding-right:4px
     
 }
 
@@ -375,28 +336,15 @@ body {
 #M1_8 {
     background-color: transparent;
     font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding: 3px 3px;
+    padding-bottom:2px
 }
 
 #M1_8:hover {
@@ -408,28 +356,15 @@ body {
 #M1_16 {
     background-color: transparent;
     font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding: 3px 3px;
+    padding-bottom:2px
 }
 
 #M1_16:hover {
@@ -442,28 +377,15 @@ body {
 #L1_8 {
     background-color: transparent;
     font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding: 3px 3px;
+    padding-bottom:2px
 }
 
 #L1_8:hover {
@@ -475,28 +397,15 @@ body {
 #L1_16 {
     background-color: transparent;
     font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding: 3px 3px;
+    padding-bottom:2px
 
 }
 
@@ -509,28 +418,15 @@ body {
 #R1_8 {
     background-color: transparent;
     font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding: 3px 3px;
+    padding-bottom:2px
 }
 
 #R1_8:hover {
@@ -542,28 +438,15 @@ body {
 #R1_16 {
     background-color: transparent;
     font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding: 3px 3px;
+    padding-bottom:2px
 }
 
 #R1_16:hover {
@@ -575,204 +458,215 @@ body {
 .popmenu {
     text-align: center;
     text-decoration: none;
-    font-weight: 400;
-    font-size: 1.5vmin;
+    font-weight: 700;
+    font-size: 10pt;
     color:white;
-    line-height:1.75vmin;
-    margin-right: 1vmin;
-    margin-left: 2vmin;
-    margin-top: 0.3vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.15vmin;
-    padding-right:0.15vmin;
+    line-height:14px;
+    margin: 2px 2px;
+    margin-top: 2px;
+    padding-top:3px;
+    padding-bottom:2px;
+    padding-left:3px;
+    padding-right:3px;
     height: auto;
     width: auto; 
     -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
     cursor: pointer;
-    border: 0.3vmin #999;
-    border-radius: 0.6vmin;
+    border: 2px solid #999;
+    border-radius: 6px;
     border-style:groove;
     float:right;
     position:relative;
     background: -webkit-linear-gradient(top, lightgray, black);
-    z-index:9;
 
 }
 
 .popmenu:hover {
   border-color: black;
   background: -webkit-linear-gradient(top, lightyellow, lightpink);
-  text-shadow: 0.1vmin 0.1vmin silver;
+  text-shadow: 1px 1px silver;
   color:black;
 
 }
 
 
-
 .Mbtn {
-    background:transparent;
-    border: 0.5vmin solid #999;
-    border-style:groove;
-    border-radius: 0.6vmin;
-    outline: none;
-    white-space: nowrap;
     text-align: center;
     text-decoration: none;
-    text-shadow: 0.1vmin 0.1vmin black;
-    font-weight:600;
-    font-size: 1.5vmin;
+    font-size: 14px;
     font-family:Verdana;
-    line-height:1.75vmin;
-    margin-right: 1vmin;
-    margin-left:1vw;
-    margin-top: 0.25vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.15vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
+    line-height:14px;
+    margin: 2px 2px;
+    margin-top: 2px;
+    padding-top:3px;
+    padding-bottom:4px;
+    padding-left:4px;
+    padding-right:4px;
     width: auto; 
     height: auto;
     -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
     cursor: pointer;
-    float:right;
+    border: 4px;
+    float:left;
     position:relative;
-    right:0.5%;
-     opacity: 1;
-  transition: opacity 30s;
+    
+}
 
-  -webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadeout 15s; /* Firefox < 16 */
-        -ms-animation: fadeout 15s; /* Internet Explorer */
-         -o-animation: fadeout 15s; /* Opera < 12.1 */
-            animation: fadeout 15s;  
+.Mbtn .tbtext {
+  visibility: hidden;
+  width: auto;
+  height:18px;
+  background-color: pink;
+  border-color: silver;
+  color: black;
+  font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size:14px;
+  text-decoration:blink;
+  font-weight:bold;
+  text-align: center;
+  padding-left: 1px;
+  margin-left: 0px;
+  display: inline-flex;
+  align-items: center;
+  border-width:2px;
+  border-style:inset;
+  border-radius: 6px;
+  line-height: 16px;
+  left: 0%;
+  top: -40%;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+
+.Mbtn:hover .tbtext, .Mbtn:focus .tbtext, .Mbtn:focus-within .tbtext {
+  visibility: visible;
   
-    -webkit-animation: fadein 15s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 15s; /* Firefox < 16 */
-        -ms-animation: fadein 15s; /* Internet Explorer */
-         -o-animation: fadein 15s; /* Opera < 12.1 */
-            animation: fadein 15s;
+}
 
+.Lbtn {
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-family:Verdana;
+    line-height:14px;
+    margin: 2px 2px;
+    margin-top: 2px;
+    padding-top:1px;
+    padding-bottom:1px;
+    padding-left:2px;
+    padding-right:2px;
+    width: auto; 
+    height: 24px;
+    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
+    cursor: pointer;
+    border: 4px;
+    float:left;
+    position:relative;
     
 }
 
 
-.Lbtn {
-    background:transparent;
-    border: 0.5vmin solid #999;
-    border-style:groove;
-    border-radius: 0.6vmin;
-    outline: none;
-    white-space: nowrap;
-    text-align: center;
-    text-decoration: none;
-    text-shadow: 0.1vmin 0.1vmin black;
-    font-weight:600;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.75vmin;
-    margin-right: 1vmin;
-    margin-left:1vw;
-    margin-top: 0.25vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.15vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
-    float:right;
-    position:relative;
-    right:0.5%;
-     opacity: 1;
-  transition: opacity 30s;
-
-  -webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadeout 15s; /* Firefox < 16 */
-        -ms-animation: fadeout 15s; /* Internet Explorer */
-         -o-animation: fadeout 15s; /* Opera < 12.1 */
-            animation: fadeout 15s;  
+.Lbtn .tbtext {
+  visibility: hidden;
+  width: auto;
+  min-width:500px;
+  height:16px;
+  background-color: pink;
+  border-color: silver;
+  color: black;
+  font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size:12px;
+  text-decoration:blink;
+  font-weight:bold;
+  text-align: center;
+  padding-left: 1px;
+  margin-left: 0px;
   
-    -webkit-animation: fadein 15s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 15s; /* Firefox < 16 */
-        -ms-animation: fadein 15s; /* Internet Explorer */
-         -o-animation: fadein 15s; /* Opera < 12.1 */
-            animation: fadein 15s;
-    
+  
+  border-width:2px;
+  border-style:inset;
+  border-radius: 6px;
+  line-height: 14px;
+  left: 0%;
+  bottom: -35%;
+  /* Position the tooltip */
+  position: absolute;
+  z-index:1;
+  overflow:visible;
+}
+
+.Lbtn:hover .tbtext, .Lbtn:focus .tbtext, .Lbtn:focus-within .tbtext {
+  visibility: visible;
+  
 }
 
 
 .Rbtn {
-    background:transparent;
-    border: 0.5vmin solid #999;
-    border-style:groove;
-    border-radius: 0.6vmin;
-    outline: none;
-    white-space: nowrap;
     text-align: center;
     text-decoration: none;
-    text-shadow: 0.1vmin 0.1vmin black;
-    font-weight:600;
-    font-size: 1.5vmin;
+    font-size: 14px;
     font-family:Verdana;
-    line-height:1.75vmin;
-    margin-right: 1vmin;
-    margin-left:1vw;
-    margin-top: 0.25vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.15vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
+    line-height:14px;
+    margin: 2px 2px;
+    margin-top: 2px;
+    padding-top:1px;
+    padding-bottom:1px;
+    padding-left:2px;
+    padding-right:2px;
     width: auto; 
-    height: auto;
+    height: 24px;
     -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
     cursor: pointer;
-    float:right;
+    border: 4px;
+    float:left;
     position:relative;
-    right:0.5%;
-     opacity: 1;
-  transition: opacity 30s;
-
-  -webkit-animation: fadeout 15s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadeout 15s; /* Firefox < 16 */
-        -ms-animation: fadeout 15s; /* Internet Explorer */
-         -o-animation: fadeout 15s; /* Opera < 12.1 */
-            animation: fadeout 15s;  
-  
-    -webkit-animation: fadein 15s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 15s; /* Firefox < 16 */
-        -ms-animation: fadein 15s; /* Internet Explorer */
-         -o-animation: fadein 15s; /* Opera < 12.1 */
-            animation: fadein 15s;
     
 }
 
+
+.Rbtn .tbtext {
+  visibility: hidden;
+  width: auto;
+  min-width:500px;
+  height:16px;
+  background-color: pink;
+  border-color: silver;
+  color: black;
+  font-family:"Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size:12px;
+  text-decoration:blink;
+  font-weight:bold;
+  text-align: center;
+  padding-left: 1px;
+  margin-left: 0px;
+  border-width:2px;
+  border-style:inset;
+  border-radius: 6px;
+  line-height: 14px;
+  left: 0%;
+  bottom: -35%;
+  /* Position the tooltip */
+  position: absolute;
+  z-index:1;
+  overflow:visible;
+}
+
+.Rbtn:hover .tbtext, .Rbtn:focus .tbtext, .Rbtn:focus-within .tbtext {
+  visibility: visible;
+  
+}
+
+
 .Mbtn1 {
     background-color: transparent;
-    font-weight: 600;
+    font-weight: normal;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
-    border-style:groove;
+    border-radius: 10px;
+    border-style:double;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
 }
 
 .Mbtn1:hover {
@@ -784,29 +678,14 @@ body {
 
 .Lbtn1 {
     background-color: transparent;
-    font-weight: 600;
+    font-weight: normal;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding-left: 3px;
+    padding-right: 3px
 }
 
 .Lbtn1:hover {
@@ -819,29 +698,14 @@ body {
 
 .Rbtn1 {
     background-color: transparent;
-    font-weight: 600;
+    font-weight: normal;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding-left: 3px;
+    padding-right: 3px
 }
 
 .Rbtn1:hover {
@@ -889,27 +753,15 @@ body {
 #M5 {
     background-color: transparent;
     font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
     color: white; 
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding: 3px 3px;
+    padding-bottom:4px;
 }
 
 #M5:hover {
@@ -922,29 +774,17 @@ body {
 #L5 {
     background-color: transparent;
     font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
     color: white; 
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding: 3px 3px;
+    padding-bottom:4px;
+   
 }
-
 
 #L5:hover {
     border-color: white;
@@ -955,39 +795,26 @@ body {
 #R5 {
     background-color: transparent;
     font-weight: 600;
+    width: auto;
+    margin: 0px 0px;
     color: white; 
-    border: 0.5vmin;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
-   
+    padding: 3px 3px;
+    padding-bottom:4px;
 }
 
 #R5:hover {
     border-color: white;
     background: -webkit-linear-gradient(top, lightgray, orange);
-    color: black;
-}
+    color: black;}
+
 
 
 .ML {
-    background: -webkit-linear-gradient(top, lightgray, black); 
+    background-color: black; 
     color: white;
     border:2px;
     border-color: lime;
@@ -995,20 +822,41 @@ body {
     border-style:groove;
     width: auto;
     margin-left: 3px;
-    margin-right: 3px;
+    margin-right: 10px;
     float:right
    
 }
 
 .ML:hover {
     border-color: blue;
-    background: -webkit-linear-gradient(top, lightyellow, lightpink);
+    background-color: white; 
     color: red;
 }
 
 
 .MR {
-    background: -webkit-linear-gradient(top, lightgray, black);
+    background-color: black; 
+    color: white;
+    border:2px;
+    border-color: lime;
+    border-radius: 6px;
+    border-style:groove;
+    width: auto;
+    margin-left: 3px;
+    margin-right: 10px;
+    float:right
+   
+}
+
+.MR:hover {
+    border-color: blue;
+    background-color: white; 
+    color: red;
+}
+
+
+.M6 {
+    background-color: black; 
     color: white;
     border:2px;
     border-color: lime;
@@ -1017,35 +865,12 @@ body {
     width: auto;
     margin-left: 3px;
     margin-right: 3px;
-    float:right
-   
-}
-
-.MR:hover {
-    border-color: blue;
-    background: -webkit-linear-gradient(top, lightyellow, lightpink);
-    color: red;
-}
-
-
-
-.M6 {
-    background-image: url("../images/recsmall.png");
-    background-size: 100%;
-    background-color:transparent;
-    border-size: 2px;
-    border-radius: 6px;
-    border-style:groove;
-    height:24px;
-    width:24px;
-    margin-left: 4px;
-    margin-right: 4px;
    
 }
 
 .M6:hover {
-    border-color: lime;
-    background-color: yellow; 
+    border-color: blue;
+    background-color: white; 
     color: red;
 }
 
@@ -1088,30 +913,16 @@ body {
 
 #Mreset {
     background-color: transparent;
-    font-weight: 600;
+    font-weight: normal;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
+    width: auto;
+    margin: 2px 2px;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
-   
+    padding-left:3px;
+    padding-right:3px
 }
 
 #Mreset:hover {
@@ -1121,29 +932,16 @@ body {
 
 #Lreset {
     background-color: transparent;
-    font-weight: 600;
+    font-weight: normal;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
+    width: auto;
+    margin: 2px 2px;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding-left:3px;
+    padding-right:3px
 }
 
 #Lreset:hover {
@@ -1154,30 +952,17 @@ body {
 
 
 #Rreset {
-    background-color: transparent;
-    font-weight: 600;
+   background-color: transparent;
+    font-weight: normal;
     color: white; 
-    margin: 0.2vmin 0.2vmin;
-    border: 0.5vmin;
+    width: auto;
+    margin: 2px 2px;
     border-color: transparent;
-    border-radius: 0.5vmin;
+    border-radius: 6px;
     border-style:groove;
     position:relative;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.5vmin;
-    font-family:Verdana;
-    line-height:1.5vmin;
-    margin: 0.2vmin 0.2vmin;
-    margin-top: 0.1vmin;
-    padding-top:0.1vmin;
-    padding-bottom:0.1vmin;
-    padding-left:0.2vmin;
-    padding-right:0.2vmin;
-    width: auto; 
-    height: auto;
-    -webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;
-    cursor: pointer;
+    padding-left:3px;
+    padding-right:3px
 }
 
 #Rreset:hover {
@@ -1310,7 +1095,7 @@ body {
     position:absolute;
     display:block;
     text-align:center;
-    left: 1%;
+    right: 1.25%;
     margin-top:1px;
     padding-top: 0px;
     padding-bottom:1px;
@@ -1329,7 +1114,8 @@ body {
     color: white;
     opacity: 0.25;
     transition: opacity 30s;
-    bottom: 5%;
+    top: 1.5%;
+    z-index:35;
 }
 
 .controlsL:hover {
@@ -1988,44 +1774,84 @@ body {
     line-height: 18px;
     cursor: move;
     transition: 5s;
-    float:right
 }
 
 .drag:hover {
     color: yellow;
 }
 
-.closebtn1 {
-    position:relative;
-    margin-right:1vmin;
-    color: red;
-    font-weight: bold;
-    float: left;
-    font-size: 2vmin;
-    line-height: 2vmin;
-    cursor:progress;
-    transition: 5s;
-}
-
-
-.closebtn1:hover {
-    color: yellow;
-}
-
 
 .closebtn2 {
-    margin-right:1vmin;
+    margin-right:3px;
     color: red;
     font-weight: bold;
     float: right;
-    font-size: 2vmin;
-    line-height: 2vmin;
-    cursor:progress;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
     transition: 5s;
 }
 
 .closebtn2:hover {
     color: yellow;
+}
+
+.closebtn2 .closebox {
+  visibility: hidden;
+  width: 180px;
+  height:35x;
+  background-color: black;
+  border-color: silver;
+  color: white;
+  font-size: 18px;
+  text-decoration:blink;
+  font-weight:normal;
+  text-align: center;
+  margin-left:5px;
+  display: inline-flex;
+  align-items: center;
+  border-width:2px;
+  border-style:inset;
+  border-radius: 6px;
+  line-height: 100%;
+  /* Position the tooltip */
+  position: absolute;
+  top: 105%;
+  right: 25%;
+  
+}
+
+.closebtn2:hover .closebox {
+  visibility: visible;
+}
+
+.closebtn2 .closeboxleft {
+  visibility: hidden;
+  width: 180px;
+  height:35x;
+  background-color: black;
+  border-color: silver;
+  color: white;
+  font-size: 18px;
+  text-decoration:blink;
+  font-weight:normal;
+  text-align: center;
+  margin-left:5px;
+  display: inline-flex;
+  align-items: center;
+  border-width:2px;
+  border-style:inset;
+  border-radius: 6px;
+  line-height: 100%;
+  /* Position the tooltip */
+  position: absolute;
+  top: 105%;
+  left: 25%;
+  
+}
+
+.closebtn2:hover .closeboxleft {
+  visibility: visible;
 }
 
 
@@ -2034,7 +1860,7 @@ body {
     position:absolute;
     text-align:left;
     display:inline-block;
-    left: 33%;
+    left: 1%;
     padding-top: 2px;
     padding-bottom:2px;
     padding-left: 4px;
@@ -2054,7 +1880,8 @@ body {
     color: white;
     opacity: .25;
     transition: opacity 5s;
-    bottom: 0.5%;
+    top: 1.5%;
+    
 -webkit-animation: fadeout 45s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 45s; /* Firefox < 16 */
         -ms-animation: fadeout 45s; /* Internet Explorer */
@@ -2066,7 +1893,7 @@ body {
         -ms-animation: fadein 5s; /* Internet Explorer */
          -o-animation: fadein 5s; /* Opera < 12.1 */
             animation: fadein 5s;
-    
+   z-index:35;
 }
 
 .toolblock:hover {
@@ -2075,7 +1902,6 @@ body {
  opacity: 1;
  color: red;
  transition: opacity 3s;
- z-index:7;
 }
 
 
@@ -2204,24 +2030,23 @@ body {
 }
 
 
-.paperscript {
+
+
+
+
+.paperscriptL {
     position: absolute !important;
-    width:99%;
-    height:52%;
+    width:98%;
+    height:10%;
     top:2%;
-    left:1%;
+    left:2%;
     right:0%;
-    bottom:49%;
+    bottom:0%;
     background-color:transparent;
     resize:vertical;
-    overflow-y:visible darkred;
-    overflow-x: hidden;
-
-    z-index:1; 
-  
-/*    -webkit-scrollbar: width: 0.25vw; height: 1vh;  */
-    
+    overflow:auto;    
 }
+
 
 .paperscriptR {
     position: absolute !important;
@@ -2234,6 +2059,23 @@ body {
     background-color:transparent;
     overflow:hidden
 }
+
+.paperscriptM {
+    position: absolute !important;
+    width:98%;
+    height:86%;
+    top:2%;
+    left:2%;
+    right:0%;
+    bottom:0%;
+    background-color:transparent;
+    resize:vertical;
+    overflow-y:visible darkred;
+    overflow-x: hidden;
+    z-index:1; 
+  
+}
+
 
 
 /*
@@ -2264,12 +2106,12 @@ body {
   border-color:gold;
   border-style:solid;
   border-radius: 4px;
-  width: 99.0%;
+  width: 99.5%;
   height: 94.6%;
   padding-bottom: 0px;
   margin-right:0.0%;
   margin-top: 0%;
-  overflow:hidden;
+  overflow:hidden
 }
 
 
@@ -2299,13 +2141,12 @@ body {
   border-color:gold;
   border-style:solid;
   border-radius: 4px;
-  width: 99.0%;
+  width: 99.25%;
   height: 94.5%;
   padding-bottom: 0px;
   margin-right:0.0%;
   margin-top: 0%;
   overflow:hidden
-
 }
 
 
@@ -2330,15 +2171,13 @@ body {
 #stageL{
   background:transparent;
   width:100%;
-  height:80%;
+  height:100%;
   position:relative;
   border: 2px;
   border-color:transparent;
   border-style:solid;
   border-radius: 10x;
   overflow:hidden;
-
-  
   
 }
 
@@ -2352,11 +2191,10 @@ body {
   position:relative;
   margin:0;
   border: 2px;
-  border-color:transparent;
+  border-color:#0066CD;
   border-style:solid;
   border-radius: 10x;
   overflow:hidden;
-  /* prior blue #0066CD */
  
 }
 
@@ -2372,13 +2210,13 @@ body {
 
 #wrapL{
   background:transparent;
-  width:50%;
-  height:80%;
+  width:100%;
+  height:100%;
   margin-bottom:0%;
   overflow:hidden;
   left:0%;
   float:left;
-  display:inline-block;
+ 
 }
 
 #wrapL span{font-size:20px;color:#666;display:block;padding:2em;}
@@ -2396,88 +2234,8 @@ body {
 
 #wrapR span{font-size:20px;color:#666;display:block;padding:2em;}
 
-/* CSS for resizable  */
-
-.ui-resizable { position: relative;}
-.ui-resizable-handle { position: absolute;font-size: 0.1px; display: block; }
-.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
-.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
-.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
-.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
-.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
-.ui-resizable-se { cursor: se-resize; width: 16px; height: 16px; right: 3px; bottom: 1px;}
-.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
-.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
-.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
 
 
-
-
-#modal {
- position:absolute;
- width:auto;
- height:18px;
- line-height:18px;
- padding-top: 4px;
- background:transparent;
- float:left;
- left:45%;
- bottom:1%
-}
- 
-#modtext {
- background: -webkit-linear-gradient(top, lightgray, black);
- color:white;
- text-shadow: 1px 1px black;
- font-weight: 700;
- font-size: 10pt;
- border-radius: 4px;
-}
-
-#modalR {
- position:absolute;
- width:auto;
- height:18px;
- line-height:18px;
- padding-top: 4px;
- background:transparent;
- float:left;
- left:45%;
- bottom:1%
-}
- 
-#modRtext {
- background: -webkit-linear-gradient(top, lightgray, black);
- color:white;
- text-shadow: 1px 1px black;
- font-weight: 700;
- font-size: 10pt;
- border-radius: 4px;
-}
-
-
-
-#table {
- position:absolute;
- width:auto;
- height:180px;
- line-height:16px;
- padding-top: 4px;
- background:transparent;
- float:right;
- left:45%;
- bottom:30%;
- display:inline-table
-}
- 
-#table:tabtext {
- background: -webkit-linear-gradient(top, lightgray, black);
- color:white;
- text-shadow: 1px 1px black;
- font-weight: 700;
- font-size: 10pt;
- border-radius: 4px;
-}
 
 
             
