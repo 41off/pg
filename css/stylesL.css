@@ -134,8 +134,9 @@ body {
     margin:auto;
     display: block;
     min-width: 100px;
-    left:43%;   
-    bottom:13%;
+    left:2%;   
+    bottom:18%;
+    z-index: 35;
     
 }
 
