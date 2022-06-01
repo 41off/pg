@@ -116,11 +116,11 @@ body {
 .bar1 {
    position: absolute;
    display:inline-block;
-   padding-top: 4px;
-   left:2%;
-   top: 1%;
-   height: 30px;
-   width:96%;
+   padding-top: 1px;
+   left:16%;
+   bottom: 3%;
+   height: 28px;
+   width:68%;
    min-width:400px;
    padding:auto;
    margin: 0 auto;
@@ -133,15 +133,17 @@ body {
    border-style:groove;
    overflow:hidden;
    z-index:25;
+   color:transparent;
 }
 
 .bar1:hover {
     background: -webkit-linear-gradient(top, lightgray, black);
     border-color: black;
     border-radius: 4px;
-    color:black;
+    color:red;
     opacity: 1;
     transition: opacity 2s;
+    cursor:move;
     
 
 }
@@ -153,21 +155,21 @@ body {
     border:2px #666666 solid;
     border-radius: 4px;
     background-color: black;
-    line-height:20px;
+    line-height:18px;
     font-size:18px;
     font-family:"Verdana";
     color:white;
     text-align:left;    
-    height: 24px;
+    height: 20px;
     width:auto;    
-    padding-top: 3px;
+    padding-top: 2px;
     padding-left: 5px;
     padding-right:3px;
     margin:auto;
     display: block;
     min-width: 100px;
-    right:20%;   
-    top:1.5%;
+    right:22%;   
+    bottom:3.25%;
     z-index: 35;
     
 }
@@ -245,10 +247,10 @@ body {
 .menubarL {
     position: absolute;
     display:inline-block;
-    padding-top: 4px;
+    padding-top: 2px;
     left:30%;
-    top: 1%;
-    height: 30px;
+    bottom: 3%;
+    height: 28px;
     width:auto;
     min-width:400px;
     padding:auto;
@@ -1147,7 +1149,7 @@ body {
     color: white;
     opacity: 0.25;
     transition: opacity 30s;
-    bottom: 2.5%;
+    top: 1%;
     z-index:35;
 }
 
@@ -1913,7 +1915,7 @@ body {
     color: white;
     opacity: .25;
     transition: opacity 5s;
-    bottom: 2.5%;
+    top: 1%;
     
 -webkit-animation: fadeout 45s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 45s; /* Firefox < 16 */
@@ -2052,7 +2054,7 @@ body {
   border-radius: 6px;
   line-height: 16px;
   left: 0%;
-  top: -40%;
+  bottom: -50%;
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
