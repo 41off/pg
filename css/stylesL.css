@@ -15,7 +15,7 @@ body {
 }
 
 .custom-file-input::before {
-  content: 'Choose your own .mp4 video';
+  content: 'Choose local .mp4 video';
   display: inline-block;
   background: -webkit-linear-gradient(top, lightgray, black);
   border: 1px solid #999;
@@ -113,6 +113,38 @@ body {
 }
 
 
+.bar1 {
+   position: absolute;
+   display:inline-block;
+   padding-top: 4px;
+   left:2%;
+   top: 1%;
+   height: 30px;
+   width:96%;
+   min-width:400px;
+   padding:auto;
+   margin: 0 auto;
+   opacity: 1.0;
+   transition: opacity 50s;
+   background-color: transparent;
+   border: 2px;
+   border-color: transparent;
+   border-radius: 4px;
+   border-style:groove;
+   overflow:hidden;
+   z-index:25;
+}
+
+.bar1:hover {
+    background: -webkit-linear-gradient(top, lightgray, black);
+    border-color: black;
+    border-radius: 4px;
+    color:black;
+    opacity: 1;
+    transition: opacity 2s;
+    
+
+}
 
 
 
@@ -134,8 +166,8 @@ body {
     margin:auto;
     display: block;
     min-width: 100px;
-    left:2%;   
-    bottom:18%;
+    right:20%;   
+    top:1.5%;
     z-index: 35;
     
 }
@@ -215,7 +247,7 @@ body {
     display:inline-block;
     padding-top: 4px;
     left:30%;
-    bottom: 1%;
+    top: 1%;
     height: 30px;
     width:auto;
     min-width:400px;
@@ -1096,7 +1128,7 @@ body {
     position:absolute;
     display:block;
     text-align:center;
-    right: 1.25%;
+    right: 12%;
     margin-top:1px;
     padding-top: 0px;
     padding-bottom:1px;
@@ -1115,7 +1147,7 @@ body {
     color: white;
     opacity: 0.25;
     transition: opacity 30s;
-    top: 1.5%;
+    bottom: 2.5%;
     z-index:35;
 }
 
@@ -1861,7 +1893,7 @@ body {
     position:absolute;
     text-align:left;
     display:inline-block;
-    left: 1%;
+    left: 10%;
     padding-top: 2px;
     padding-bottom:2px;
     padding-left: 4px;
@@ -1881,7 +1913,7 @@ body {
     color: white;
     opacity: .25;
     transition: opacity 5s;
-    top: 1.5%;
+    bottom: 2.5%;
     
 -webkit-animation: fadeout 45s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadeout 45s; /* Firefox < 16 */
@@ -2102,17 +2134,23 @@ body {
 
 
 #video {
-  position: relative;
+  
   border: 2px;
   border-color:gold;
   border-style:solid;
   border-radius: 4px;
-  width: 99.5%;
-  height: 94.6%;
+  
   padding-bottom: 0px;
   margin-right:0.0%;
   margin-top: 0%;
-  overflow:hidden
+  overflow:hidden;
+  
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 

@@ -32,6 +32,9 @@
    $( function() {
     $(".toolblock").draggable();
 } );
+   $( function() {
+    $(".bar1").draggable();
+} );
 
 
 /// dropdown drag option ///
