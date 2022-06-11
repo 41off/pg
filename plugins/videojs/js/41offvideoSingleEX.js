@@ -441,7 +441,8 @@
    }
 
   
-        var video_directory = ['https://www.dropbox.com/s/m26iduv2rc4lzje/X06-02-2022-52-13.mp4?raw=1',
+        var video_directory = ['https://www.dropbox.com/s/2soavzh7i5um74a/X06-08-2022.mp4?raw=1',
+                               'https://www.dropbox.com/s/m26iduv2rc4lzje/X06-02-2022-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/qxe65doomy1zm5q/XPG-05-20-2022-13_52c.mp4?raw=1',
                                'https://www.dropbox.com/s/i6rn1kn1m4iyksq/PG-13M-DM-12M-52K-SPLIT.mp4?raw=1',
                                'https://www.dropbox.com/s/nss7somhwtc06zg/XPG-05-22-2022.mp4?raw=1',
