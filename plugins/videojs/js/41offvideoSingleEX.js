@@ -4,7 +4,7 @@
             video_player.setAttribute("src", video_directory[video_index]);
             
             video_player.play();
-            video.playbackRate = 0.125;
+            video.playbackRate = 0.0625;
             
             video_player.volume = 0.2;
             video_player.currentSrc();
@@ -446,8 +446,7 @@
    }
 
   
-        var video_directory = ['https://www.dropbox.com/s/bb9777r1jouruzj/07-04-2022_52-13.mp4?raw=1',
-                               'https://www.dropbox.com/s/68i4wksoo09kr0t/XXB06-08-2022.mp4?raw=1',
+        var video_directory = ['https://www.dropbox.com/s/68i4wksoo09kr0t/XXB06-08-2022.mp4?raw=1',
                                'https://www.dropbox.com/s/2soavzh7i5um74a/X06-08-2022.mp4?raw=1',
                                'https://www.dropbox.com/s/m26iduv2rc4lzje/X06-02-2022-52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/qxe65doomy1zm5q/XPG-05-20-2022-13_52c.mp4?raw=1',
@@ -456,6 +455,7 @@
                                'https://www.dropbox.com/s/p0r7l8n4vryrthm/X05-24-2022-14-52-best80k.mp4?raw=1',
                                'https://www.dropbox.com/s/nz4efjj48qr3650/XPG-05-19-2020-2k.mp4?raw=1',
                                'https://www.dropbox.com/s/bb9777r1jouruzj/07-04-2022_52-13.mp4?raw=1',
+                               'https://www.dropbox.com/s/g8cjjabc317fnjt/07-06-2022.mp4?raw=1',
                                ];                      
  
   
