@@ -457,7 +457,7 @@
                                'https://www.dropbox.com/s/bb9777r1jouruzj/07-04-2022_52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/g8cjjabc317fnjt/07-06-2022.mp4?raw=1',
                                'https://www.dropbox.com/s/owxnmimnnqatnl9/07-09-2022.mp4?raw=1',
-                               'https://www.dropbox.com/s/qzq5906upsxdei1/07-21-2022.mp4?raw=1',
+                               'https://www.dropbox.com/s/qzq5906upsxdei1/07-21-2022.mp4?raw=1'                               
                                ];                      
  
   
@@ -844,34 +844,27 @@ $("#negative3").click(function() { // button function for rewind
        }
        
           function on11L(){
-            console.log("11 ended");
-             if(video_index = 10){
-                video_index++;
-           }
-            else{
-                video_index = 0;
-            }
-            video_player = document.getElementById("video");
-            video_player.setAttribute("src", video_directory[video_index]);
-            
-           
-           var btn = document.getElementById("modal");
+           console.log("11 ended");
+           video_index = 11;
+           video_player.setAttribute("src", video_directory[video_index]);
+                      
+          var btn = document.getElementById("modal");
       
-            if (btn.value == "V11.mp4") {
-              btn.value = "Play";
-              btn.innerHTML = '<button id="modtext">V11.mp4</button>';              
+            if (btn.value == "Clip 12") {
+              btn.value = "";
+              btn.innerHTML = '<button id="modtext">Clip 11</button>';
               timer.reset();
-              
+             
               timer.start(10);
               timer.mode(1);
               }
             else {
-              btn.value = "V11.mp4";
+              btn.value = "Clip 12";
               btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
               timer.stop();
               video_player.pause();
               }
-        }
+       }
         
         
           function on12L(){
