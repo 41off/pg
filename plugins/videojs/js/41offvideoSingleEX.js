@@ -457,7 +457,8 @@
                                'https://www.dropbox.com/s/bb9777r1jouruzj/07-04-2022_52-13.mp4?raw=1',
                                'https://www.dropbox.com/s/g8cjjabc317fnjt/07-06-2022.mp4?raw=1',
                                'https://www.dropbox.com/s/owxnmimnnqatnl9/07-09-2022.mp4?raw=1',
-                               'https://www.dropbox.com/s/qzq5906upsxdei1/07-21-2022.mp4?raw=1'                               
+                               'https://www.dropbox.com/s/qzq5906upsxdei1/07-21-2022.mp4?raw=1',
+                               'https://www.dropbox.com/s/62lol65s37bkk1s/07-22-2022.mp4?raw=1',                               
                                ];                      
  
   
@@ -867,9 +868,16 @@ $("#negative3").click(function() { // button function for rewind
        }
         
         
-          function on12L(){
-            console.log("12 ended");
-             if(video_index = 11){
+        function on12L(){
+           console.log("12 ended");
+           video_index = 12;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+        
+          function on121L(){
+            console.log("120 ended");
+             if(video_index = 120){
                 video_index++;
            }
             else{
