@@ -4,14 +4,15 @@
             video_player.setAttribute("src", video_directory[video_index]);
             
             video_player.play();
-            video.playbackRate = 0.0625;
+            video.playbackRate = 0.5;
             
             video_player.volume = 0.2;
             video_player.currentSrc();
-            video_player.currentTime();      
-           
-            timer.start(10);
-            
+            video_player.currentTime();
+               
+                      
+      timer.start(40);
+      timer.mode(1);
     }
        
        
@@ -328,10 +329,10 @@
               
      if(video_player.paused){
       
-      timer.start(10);
+      timer.start(30);
       timer.mode(1);      
       video_player.play();
-      video.playbackRate = 1.0;
+      video.playbackRate = 0.333;
      } 
        else {
             timer.stop();
@@ -358,7 +359,7 @@
              video_player.pause();
                 }
      if(video_player.paused){
-      timer.start(2);
+      timer.start(2.5);
       timer.mode(1);
       video_player.play();
       video.playbackRate = 4.0;
@@ -371,21 +372,21 @@
    
    function multiSupFwdL() {
     var btn = document.getElementById("L16x");
-        if (btn.value == "+16X") {
+        if (btn.value == "+1X") {
              btn.value = "Pause";
-             btn.innerHTML = "+16X";
+             btn.innerHTML = "+1X";
              video_player.play();
                 }
          else {
-             btn.value = "+16X";
+             btn.value = "+1X";
              btn.innerHTML = "Pause";
              video_player.pause();
                 }
      if(video_player.paused){
-      timer.start(0.125);
+      timer.start(10);
       timer.mode(1);
       video_player.play();
-      video.playbackRate = 16.0;
+      video.playbackRate = 1.0;
       } 
        else {
             timer.stop();
@@ -460,8 +461,11 @@
                                'https://www.dropbox.com/s/qzq5906upsxdei1/07-21-2022.mp4?raw=1',
                                'https://www.dropbox.com/s/62lol65s37bkk1s/07-22-2022.mp4?raw=1',
                                'https://www.dropbox.com/s/x4sqygujfaw0qyg/PG-07-30-2022.mp4?raw=1',
-                               'https://www.dropbox.com/s/scpgpbywo92s4o6/08-07-2022.mp4?raw=1',                               
-                               ];                      
+                               'https://www.dropbox.com/s/scpgpbywo92s4o6/08-07-2022.mp4?raw=1',
+                               'https://www.dropbox.com/s/voxf8rbdsg0h3oc/PG-S1-08-18-2022.mp4?raw=1', 
+                               'https://www.dropbox.com/s/elm0sn8vs5ej7vq/PG-S2-08-18-2022.mp4?raw=1', 
+                               'https://www.dropbox.com/s/kouqndha6iobdkm/PG-S3-08-18-2022.mp4?raw=1',
+                              ];                      
  
   
         var video_index = 0;
@@ -595,278 +599,88 @@ $("#negative3").click(function() { // button function for rewind
        }
                 },10);
 });
-*/
-            
-       function on1L(){
+*/  
+
+         function on0L(){
             console.log("0 ended");
-            video_index = 1;
-            video_player.setAttribute("src", video_directory[video_index]);
-                                
-        var btn = document.getElementById("modal");
-      
-            if (btn.value == "JM-52k-11m") {
-              btn.value = "JM-52k-11m";
-              btn.innerHTML = '<button id="modtext">JM-52k-11m</button>';              
-              multiResetB();
-              }
-            else {
-              btn.value = "JM-52k-11m";
-              btn.innerHTML = '<button id="modtext">JM-52k-11m&nbsp;&nbsp;&#129093;</button>';
-              timer.stop();
-              timerR.stop();
-              }
-          }
-        
-        function on0L(){
-            console.log("1 ended");
             video_index = 0;
             video_player.setAttribute("src", video_directory[video_index]);
-                     
-         var btn = document.getElementById("modal");
-              
-            if (btn.value == "FredWinter-58k-11m") {
-              btn.value = "FredWinter-58k-11m";
-              btn.innerHTML = '<button id="modtext">FredWinter-58k-11m</button>';             
-              timer.reset(0000);
-              
-       //       timer.start(10);
-              timer.mode(1);
-              }
-            else {
-              btn.value = "FredWinter-58k-11m";
-              btn.innerHTML =  '<button id="modtext">FredWinter-58k-11m&#129093;</button>';
-              timer.stop();
-              video_player.pause();              
-              }
         }
-           
-          function on2L(){
+            
+         function on1L(){
+            console.log("1 ended");
+            video_index = 1;
+            video_player.setAttribute("src", video_directory[video_index]);
+            video.playbackRate = 0.25;
+                                
+        }
+        
+         function on2L(){
             console.log("2 ended");
             video_index = 2;
             video_player.setAttribute("src", video_directory[video_index]);
-            
-          var btn = document.getElementById("modal");
-      
-            if (btn.value == "V2.mp4") {
-              btn.value = "V2.mp4";
-              btn.innerHTML = '<button id="modtext">V2.mp4</button>';
-              timer.reset();
-              
-              timer.start(10);
-              timer.mode(1);
-              }
-            else {
-              btn.value = "V2.mp4";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
-              timer.stop();
-              video_player.pause();
-              }
         }
                       
           function on3L(){
             console.log("3 ended");
             video_index = 3;
             video_player.setAttribute("src", video_directory[video_index]);
-            
-           var btn = document.getElementById("modal");
-      
-            if (btn.value == "V3.mp4") {
-              btn.value = "V3.mp4";
-              btn.innerHTML = '<button id="modtext">V3.mp4</button>';
-              timer.reset();
-              
-              timer.start(10);
-              timer.mode(1);
-              }
-            else {
-              btn.value = "V3.mp4";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';              
-              timer.stop();
-              video_player.pause();
-              }
         }
         
           function on4L(){
             console.log("4 ended");
             video_index = 4;
             video_player.setAttribute("src", video_directory[video_index]);
-           
-                        
-           var btn = document.getElementById("modal");
-      
-            if (btn.value == "EB-52k-13m") {
-              btn.value = "";
-              btn.innerHTML = '<button id="modtext">EB-52k-13m</button>';
-              multiResetB();
-              }
-            else {
-              btn.value = "EB-52k-13m";
-              btn.innerHTML = '<button id="modtext">EB-52k-13m&nbsp;&nbsp;&#129093;</button>';
-              timer.stop();
-              timerR.stop();
-                           
-              }
+         
         }
            
          function on5L(){
             console.log("5 ended");
             video_index = 5;
             video_player.setAttribute("src", video_directory[video_index]);
-            
-                        
-          var btn = document.getElementById("modal");
       
-            if (btn.value == "TH-55k-13m") {
-              btn.value = "";
-              btn.innerHTML = '<button id="modtext">TH-55k-13m</button>';
-              multiResetB();
-              }
-            else {
-              btn.value = "TH-55k-13m";
-              btn.innerHTML = '<button id="modtext">TH-55k-13m&nbsp;&nbsp;&#129093;</button>';
-              timer.stop();
-              timerR.stop();
-              }
         }
         
          function on6L(){
             console.log("6 ended");
             video_index = 6;
             video_player.setAttribute("src", video_directory[video_index]);
-                        
-          var btn = document.getElementById("modal");
-      
-            if (btn.value == "Clip 7") {
-              btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 7</button>';
-              timer.reset();
-           
-              timer.start(10);
-              timer.mode(1);
-              }
-            else {
-              btn.value = "Clip 7";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
-              timer.stop();
-              video_player.pause();
-              }
+        
         }
          
           function on7L(){
             console.log("7 ended");
             video_index = 7;
             video_player.setAttribute("src", video_directory[video_index]);
-                        
-           var btn = document.getElementById("modal");
-      
-            if (btn.value == "Clip 8") {
-              btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 8</button>';
-              timer.reset();
-            
-              timer.start(10);
-              timer.mode(1);
-              }
-            else {
-              btn.value = "Clip 8";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
-              timer.stop();
-              video_player.pause();
-              }
+       
         }
         
           function on8L(){
             console.log("8 ended");
             video_index = 8;
             video_player.setAttribute("src", video_directory[video_index]);
-            
-            
-           var btn = document.getElementById("modal");
-      
-            if (btn.value == "JM-52k-13m") {
-              btn.value = "";
-              btn.innerHTML = '<button id="modtext">JM-52k-13m</button>';              
-              timer.reset();
-             
-              timer.start(10);
-              timer.mode(1);
-              }
-            else {
-              btn.value = "JM-52k-13m";
-              btn.innerHTML = '<button id="modtext">JM-52k-13m&nbsp;&nbsp;&#129093;</button>';              
-              timer.stop();
-              video_player.pause();
-              }
+        
         }
         
           function on9L(){
            console.log("9 ended");
            video_index = 9;
            video_player.setAttribute("src", video_directory[video_index]);
-           
-           
-          var btn = document.getElementById("modal");
-      
-            if (btn.value == "JE 52k-11m") {
-              btn.value = "";
-              btn.innerHTML = '<button id="modtext">JE 52k-11m</button>';
-              timer.reset();
-              
-              timer.start(10);
-              timer.mode(1);
-              }
-            else {
-              btn.value = "JE 52k-11m";
-              btn.innerHTML = '<button id="modtext">JE 52k-11m&nbsp;&nbsp;&#129093;</button>';
-              timer.stop();
-              video_player.pause();
-              }
+         
        }
        
           function on10L(){
            console.log("10 ended");
            video_index = 10;
            video_player.setAttribute("src", video_directory[video_index]);
-                      
-          var btn = document.getElementById("modal");
-      
-            if (btn.value == "Clip 11") {
-              btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 11</button>';
-              timer.reset();
-             
-              timer.start(10);
-              timer.mode(1);
-              }
-            else {
-              btn.value = "Clip 11";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
-              timer.stop();
-              video_player.pause();
-              }
+          
        }
        
           function on11L(){
            console.log("11 ended");
            video_index = 11;
            video_player.setAttribute("src", video_directory[video_index]);
-                      
-          var btn = document.getElementById("modal");
-      
-            if (btn.value == "Clip 12") {
-              btn.value = "";
-              btn.innerHTML = '<button id="modtext">Clip 11</button>';
-              timer.reset();
-             
-              timer.start(10);
-              timer.mode(1);
-              }
-            else {
-              btn.value = "Clip 12";
-              btn.innerHTML = '<button id="modtext">Click Twice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8665;</button>';
-              timer.stop();
-              video_player.pause();
-              }
+        
        }
         
         
@@ -885,30 +699,6 @@ $("#negative3").click(function() { // button function for rewind
        function on14L(){
            console.log("14 ended");
            video_index = 14;
-           video_player.setAttribute("src", video_directory[video_index]);
-       }
-     
-       function on15L(){
-           console.log("15 ended");
-           video_index = 15;
-           video_player.setAttribute("src", video_directory[video_index]);
-       }
-     
-       function on16L(){
-           console.log("16 ended");
-           video_index = 16;
-           video_player.setAttribute("src", video_directory[video_index]);
-       }
-       
-       function on17L(){
-           console.log("17 ended");
-           video_index = 17;
-           video_player.setAttribute("src", video_directory[video_index]);
-       }
-
-       function on18L(){
-           console.log("18 ended");
-           video_index = 18;
            video_player.setAttribute("src", video_directory[video_index]);
        }
 

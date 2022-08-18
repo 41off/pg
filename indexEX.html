@@ -16,14 +16,12 @@
  <link href="css/slidebardropL.css" rel="stylesheet" type="text/css">
  
   <link rel="stylesheet" href="css/popoverL.css">
-  
- 
  
  <script src="js/jquery-3.6.0.js"></script>
  <script src="js/jquery-ui.js"></script>
  
- <script src="js/bootstrap_popup.min.js"></script> 
  
+ <script src="js/bootstrap_popup.min.js"></script> 
 
 </head>
 
@@ -35,9 +33,14 @@ window.addEventListener("load", function B() { onloadL() })
 </script>
 
 
-<body >        
+
+<body >
+       
+        
 
 <div id="wrap">
+
+ 
 
  <div class="timer">
              <span class="minute">00</span>:<span class="second">00</span>.<span class="milli">00</span>
@@ -53,7 +56,7 @@ window.addEventListener("load", function B() { onloadL() })
   
    <div id="stageL">
          
-               <video id="video" controls muted loop 
+               <video id="video" controls muted loop
                      onclick="this.paused? ClickPauseL():ClickStartL(); this.paused? timer.start(10):timer.stop(0)" onended="onVideoEndedL();">
                     <source type="video/mp4">
                     <source type="video/ogg">
@@ -61,40 +64,17 @@ window.addEventListener("load", function B() { onloadL() })
                </video>
    </div>
   
-   <div class="bar1" title="Drag Launcher as needed">&nbsp;&nbsp;&#10016;&nbsp;&nbsp;
-     
-     <input type="file" class="custom-file-input" accept="video/mp4"/>
-    
-     <div id="message" display="inline-block" padding="6px"></div> 
-   
-  </div>
-  
-  <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
-  
  
          <div class="dropdownL" title="Drag Menu as needed">
                                      &#10016;
                                      <button class="dropbtn">PG Clips</button>
                                        <div class="dropdownL-content">
                                         
-                                        <a href="#" onclick="on0L()">Gate Strike</a>
-                                        <a href="#" onclick="on1L()">06-08-2022</a>
-                                        <a href="#" onclick="on2L()">06-02-2022</a>
+                                        <a href="#" onclick="on0L()">05-19-2022</a>
+                                        <a href="#" onclick="on1L()">05-20-2022</a>
+                                        <a href="#" onclick="on2L()">PG-13m_DM-12m-52k-split</a>
                                         <a href="#" onclick="on3L()">05-22-2022</a>
-                                        <a href="#" onclick="on4L()">PG-13m_DM-12m-52k-split</a>
-                                        <a href="#" onclick="on5L()">05-22-2022</a>
-                                        <a href="#" onclick="on6L()">05-24-2022</a>
-                                        <a href="#" onclick="on7L()">05-19-2022</a>
-                                        <a href="#" onclick="on8L()">07-04-2022</a>
-                                        <a href="#" onclick="on9L()">07-06-2022</a>
-                                        <a href="#" onclick="on10L()">07-09-2022</a>
-                                        <a href="#" onclick="on11L()">07-21-2022</a>
-                                        <a href="#" onclick="on12L()">07-22-2022</a> 
-                                        <a href="#" onclick="on13L()">07-30-2022</a>
-                                        <a href="#" onclick="on14L()">08-07-2022</a>
-                                        <a href="#" onclick="on15L()">S1-08-18-2022</a>
-                                        <a href="#" onclick="on17L()">S2-08-18-2022</a>
-                                        <a href="#" onclick="on14L()">S3-08-18-2022</a>                                                                         
+                                        <a href="#" onclick="on4L()">05-24-2022</a>
                                         <a href="#" onclick="onvideoNextL()">Next</a>
                                         <a href="#" onclick="onvideoBackL()">Prior</a>
                                        </div>
@@ -102,21 +82,28 @@ window.addEventListener("load", function B() { onloadL() })
                     </div>
 
          <div class="menubarL" style="text-align:center">
+              
+     <input type="file" class="custom-file-input" accept="video/mp4"/>
+    
+     <div id="message" display="inline-block"></div> 
+
             <button id="L5" class="Lbtn" onClick="multiStartL()" value=" Play ">&nbsp;Play&nbsp;</button>
-	        <button class="Lbtn" id="L16x" onClick="multiSupFwdL()" value="16X">+1X</button>  
             <button class="Lbtn" id="L1_8" onClick="multiSlowL()" value="+1/8X" title="Click Twice to Activate">+1/8X</button>
             <button class="Lbtn" id="L1_16" onClick="multiSuperSlowL()" value="+1/16x">+1/16X</button> 
             <button class="Lbtn Lbtn1" id="negative2L">-1/8X</button>
             <button class="Lbtn Lbtn1" id="negativeL" >-1X</button >
             <button class="Lbtn Lbtn1" id="negative3L">-4X</button> 
             <button class="Lbtn" id="L4x" onClick="multiFwdL()" value="4X">+4X</button>
-                         
+            <button class="Lbtn" id="L16x" onClick="multiSupFwdL()" value="16X">+16X</button>               
             <button class="Lbtn" id="Lreset" onclick="on0L()">Repeat</button> 
             <button class="Lbtn" id ="Lnegative2" onClick="onvideoBackL()">&nbsp;Prior&nbsp;</button>  
             <button class="Lbtn" id="Lreset" onClick="onvideoNextL()">&nbsp;Next&nbsp;</button>
-            <button class="Lbtn" id="Lreset" onClick="multiResetL()">&nbsp;Reset&nbsp;&#129142;&nbsp;</button>
+            <button class="Lbtn" id="Lreset" onClick="multiResetL()">&nbsp;Reset&nbsp;&#129146;&nbsp;</button>
+            <button class="Mbtn ML" title="View Side-By-Side Player" href="#" onclick="window.location.href='player.html';">[\\+//]</button>
             <span class="drag" title="Drag Left Player Controls elsewhere as needed">&nbsp;&nbsp;&#10016;</span>             
            </div> 
+           
+         <script type="text/javascript" src="plugins/41off-loadL.js"></script> 
                 
         <div class="controlsL"><span class="drag" title="Drag Left Zoom Controls elsewhere as needed">&nbsp;&nbsp;&nbsp;&#10016;</span></div> 
         
@@ -170,22 +157,39 @@ window.addEventListener("load", function B() { onloadL() })
 							            <i class="toolicon11"></i><span class="hint">Click to "delete" all drawn items on the canvas.</span>
 							        </button>
 							        <span class="drag" title="Drag Drawing Tools Bar elsewhere as needed">&nbsp;&nbsp;&#10016;</span>
-				    	</div>
-		          </div>  
-             </div>
+							</div>
+				    	
+             </div>  
+             
+      <script type="text/javascript" src="plugins/41off-drag.popover.closebtn.js"></script>    <!-- within wrap   -->
+        
+ </div>
       
-
+       					
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+  
+  
+  
+  
   
    <!-- Text - Color Palette JS -->
    <script src="plugins/textbox.js"></script>
    
+   
   
+
    <script type="text/javascript" src="plugins/videojs/js/41offvideoSingleEX.js"></script>
  <!--  <script type="text/javascript" src="plugins/videojs/js/41offvideoR.js"></script>  -->
    
    <script type="text/javascript" src="plugins/41offtimerBoth.js"></script>
-  
+   <script type="text/javascript" src="plugins/41offtimerR.js"></script>
+   
+   
    <script type="text/javascript" src="plugins/41offzoomL.js"></script>
+   
+   <script type="text/javascript" src="plugins/41offzoomR.js"></script>
    
    <script type="text/javascript" src="plugins/41off-drag.js"></script>
 
@@ -193,6 +197,19 @@ window.addEventListener("load", function B() { onloadL() })
  <!-- Video JS -->
    <script src="plugins/fabric/fabric.min.js"></script>
    <script src="js/commonFunctionBoth.js"></script>
+  
+ 
+<script>
+var close = document.getElementsByClassName('closebtn2');
+var i;
+for (i = 0; i < close.length; i++) {
+    close[i].onclick = function(){
+        var div = this.parentElement;
+        div.style.opacity = "0";
+        setTimeout(function(){ div.style.display = "none"; }, 1200);
+    }
+}
+</script>
 
 </body>
 </html>

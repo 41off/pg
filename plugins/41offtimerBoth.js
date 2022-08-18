@@ -122,42 +122,6 @@ $(document).ready(function(e)
 });
 
 
-function timerStart() {
-      var btn = document.getElementsByClassName("timer");
-      
-   /*   var w = window.open('','','width=300,height=30')
-      
-      setTimeout(function() {w.close();}, 5000)
-    */   
-        if (btn.value == "Play Both") {
-            /*w.document.write('Use this button before each click on rewind buttons ("-1/8X or -1X")');
-              w.focus();  */
-             btn.value = "Play Both";
-             btn.innerHTML = "";
-             timer.start(10);
-             timerR.start(10);
-             
-
-                }
-         else {
-             btn.value = "Pause Both";
-             btn.innerHTML = "";
-             timer.stop();
-             timerR.stop();
-              }
-              
-     if(timer.stop, timerR.stop){
-      
-      timer.start(10);
-      timer.mode(1);
-      timerR.start(10);
-      timerR.mode(1);       
-     } 
-       else {
-            timer.stop();
-            timerR.stop();
-     }
-}
 
 
 
@@ -168,17 +132,6 @@ function timeStop() {
    
 }
 
-  //  close button
-     var close = document.getElementsByClassName('closebtn2');
-     var i;
-        for (i = 0; i < close.length; i++) {
-          close[i].onclick = function(){
-         var div = this.parentElement;
-            div.style.opacity = "4";
-            div.style.Color = 'red';
-            setTimeout(function(){ div.style.display = "none"; }, 1200);
-     }
-}
 
 
 
