@@ -703,6 +703,104 @@ $("#negative3").click(function() { // button function for rewind
        }
 
 
+  function on15L(){
+           console.log("15 ended");
+           video_index = 15;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on16L(){
+           console.log("16 ended");
+           video_index = 16;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on17L(){
+           console.log("17 ended");
+           video_index = 17;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on18L(){
+           console.log("18 ended");
+           video_index = 18;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on19L(){
+           console.log("19 ended");
+           video_index = 19;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on20L(){
+           console.log("20 ended");
+           video_index = 20;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on21L(){
+           console.log("21 ended");
+           video_index = 21;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on22L(){
+           console.log("22 ended");
+           video_index = 22;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on23L(){
+           console.log("23 ended");
+           video_index = 23;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on24L(){
+           console.log("24 ended");
+           video_index = 24;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on25L(){
+           console.log("25 ended");
+           video_index = 25;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on26L(){
+           console.log("26 ended");
+           video_index = 26;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on27L(){
+           console.log("27 ended");
+           video_index = 27;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
+  function on28L(){
+           console.log("28 ended");
+           video_index = 28;
+           video_player.setAttribute("src", video_directory[video_index]);
+       }
+
+
         
           function on121L(){
             console.log("120 ended");
