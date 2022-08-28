@@ -302,7 +302,8 @@ $("#negative3L").click(function() { // button function for rewind
                                'https://www.dropbox.com/s/v0r9mlrietfbr2m/PG-08-21-2022.mp4?raw=1',
                                'https://www.dropbox.com/s/fb50fll3qbqnux3/PG-S2-08-22-2022-A%2B_A.mp4?raw=1',
                                'https://www.dropbox.com/s/eum0jrsfvwtrxqy/PG-S2-08-25-2022.mp4?raw=1',
-                               'https://www.dropbox.com/s/invxe130qo1xqrk/PG-S2-08-26-2022.mp4?raw=1'
+                               'https://www.dropbox.com/s/invxe130qo1xqrk/PG-S2-08-26-2022.mp4?raw=1',
+                               'https://www.dropbox.com/s/jdah1mlj734iuvi/PG-S2-08-27-2022.mp4?raw=1'
                              ];                      
  
   
